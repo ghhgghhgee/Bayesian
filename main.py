@@ -37,7 +37,7 @@ def digest(path):
 
 def source_hashes():
     return {str(p.relative_to(ROOT)).replace("\\", "/"): digest(p)
-            for pattern in ("*.py", "*.json", "*.txt", "*.md") for p in ROOT.rglob(pattern)
+            for pattern in ("*.py", "*.json", "*.txt", "*.md", "*.ps1") for p in ROOT.rglob(pattern)
             if not any(part in (".git", "tmp", "data", "results", "dist", ".venv", "Projects")
                        for part in p.relative_to(ROOT).parts)}
 
@@ -163,11 +163,18 @@ def run(args):
 def compare(left, right, report):
     left, right = Path(left), Path(right)
     lm, rm = read_json(left/"manifest.json"), read_json(right/"manifest.json")
+    def algorithms(manifest):
+        return {name: {k:v for k,v in item.items() if k != "source_file"}
+                for name,item in manifest["algorithms"].items()}
     checks = {"completed_without_errors": all(m.get("complete") and m.get("errors") == 0 for m in (lm, rm)),
               "same_config": lm["config"] == rm["config"],
               "same_source": lm["source_hashes"] == rm["source_hashes"],
-              "same_algorithms": lm["algorithms"] == rm["algorithms"],
+              "same_algorithms": algorithms(lm) == algorithms(rm),
               "same_environment": all(lm[k] == rm[k] for k in ("python", "numpy", "scipy", "platform"))}
+    checks["output_integrity"] = all(
+        (directory/name).is_file() and digest(directory/name) == expected
+        for directory, manifest in ((left,lm), (right,rm))
+        for name, expected in manifest.get("outputs", {}).items())
     def rows(path):
         with open(path/"trials.csv", encoding="utf-8") as stream:
             return [{k: v for k,v in row.items() if k != "seconds"} for row in csv.DictReader(stream)]
@@ -198,7 +205,8 @@ def plot(directory):
     for ax, variable, fixed, value in ((axes[0], "m", "k", 3), (axes[1], "k", "m", 30)):
         for name in config["algorithms"]:
             selected = sorted([r for r in rows if int(r[fixed]) == value and r["algorithm"] == name], key=lambda r: int(r[variable]))
-            ax.plot([int(r[variable]) for r in selected], [float(r["success_rate"]) for r in selected], "o-", label=name)
+            ax.plot([int(r[variable]) for r in selected], [float(r["success_rate"]) for r in selected],
+                    "o-" if len(selected) > 2 else "o", label=name)
         ax.set(xlabel=variable.upper(), ylabel="Success rate", ylim=(-.03, 1.03), title=f"{fixed.upper()}={value}; {config['trials']} trials/point")
         ax.grid(alpha=.3)
     axes[1].legend(fontsize=8)
@@ -221,6 +229,8 @@ def plot(directory):
             ax.legend()
         fig.savefig(directory/"convergence.png", dpi=180)
         plt.close(fig)
+    manifest.setdefault("outputs", {}).update({p.name: digest(p) for p in directory.glob("*.png")})
+    write_json(directory/"manifest.json", manifest)
 
 
 def package(output):
@@ -232,7 +242,7 @@ def package(output):
             rel = p.relative_to(ROOT)
             if not p.is_file() or any(part in (".git", ".venv", "tmp", "dist", "__pycache__", "data", "Projects") for part in rel.parts):
                 continue
-            if p.suffix.lower() not in (".py", ".json", ".md", ".csv", ".png", ".npz", ".txt", ".ps1") and p.name != ".gitignore":
+            if p.suffix.lower() not in (".py", ".json", ".md", ".csv", ".png", ".npz", ".txt", ".ps1") and p.name not in (".gitignore", ".gitattributes"):
                 continue
             if p.name.startswith("paper2_"):
                 continue

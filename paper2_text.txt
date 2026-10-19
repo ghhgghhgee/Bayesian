@@ -1,0 +1,314 @@
+===== PAGE 1 =====
+IEEE SIGNAL PROCESSING LETTERS, VOL. 22, NO. 5, MAY 2015 583
+Bayesian Compressive Sensing
+Using Normal Product Priors
+Zhou Zhou, Kaihui Liu, and Jun Fang , Member, IEEE
+Abstract— In this letter, we introduce a new sparsity-promoting
+prior, namely, the “normal product” prior, and develop an ef ﬁ-
+cient algorithm for sparse signal recovery under the Bayesian
+framework. The normal product dist ribution is the distribution of
+a product of two normally distributed variables with zero meansand possibly different variances. Like other sparsity-enc ouraging
+distributions such as the Student’s
+-distribution, the normal
+product distribution has a sharp peak at the origin, which makesit a suitable prior to encourage sparse solutions. A two-s tage
+normal product-based hierarchical model is proposed. We resortto the variational Bayesian (VB) method to perform the infer-ence. Simulations are conducted to illustrate the effe ctiveness of
+our proposed algorithm as compared with other state-of-the-artcompressed sensing algorithms.
+Index Terms— Compressed Sensing, normal product prior,
+sparse Bayesian learning.
+I. INTRODUCTION
+COMPRESSED sensing [1], [2] i s a new data acquisition
+technique that has attracted much attention over the past
+decade. Existing methods for c ompressed sensing can gener-
+ally be classi ﬁed into t he following categories, i.e. the greedy
+pursuit approach [3], the convex r elaxation-type approach [4]
+and the nonconvex optimization method [5]. Another class of
+compressed sensi ng techniques that have received increasing
+attention are Bayesian methods. In the Bayesian framework,
+the signal is usually assigned a spa rsity-encouraging prior, such
+as the Laplac e prior and the Gaussian-inverse Gamma prior [6],
+to encourage sparse solutions. It has been shown in a series of
+experiments that Bayesian compr essed sensing techniques [7]
+demonst rate superiority for sparse signal recovery as compared
+with the greedy methods and the basis pursuit method. One
+of the most popular prior model for Bayesian compressed
+sensing is the Gaussian-inverse Gamma prior proposed in [6].
+The Gaussian-inverse Gamma pri or is a two-layer hierarchical
+model in which the ﬁrst layer speci ﬁes a Gaussian prior to the
+Manuscript received July 26, 2014; acc epted October 16, 2014. Date of pub-
+lication October 21, 2014; date of current version November 03, 2014. Thiswork was supported in part by the National Science Foundation of China underGrant 61172114, and by the Sichuan Province Science and Technology Programunder Grant 2013GZ0029. The associate editor coordinating the review of thismanuscrpt and approving it for publication was Prof. Alex Dimakis.
+Z. Zhou, K. Liu, and J. Fang are with the National Key Laboratory of Sci-
+ence and Technology on Communications, U niversity of Electronic Science and
+Technology of China, Chengdu 611731, China, (e-mail: ZhouZhou@std.uestc.edu.cn; kaihuil@std.uestc.ed u.cn; JunFang@uestc.edu.cn).
+Color versions of one or more of the ﬁgures in this paper are available online
+at http://ieeexplore.ieee.org.
+Digital Object Identi ﬁer 10.1109/LSP.2014.2364255sparse signal and an inverse Gamma priori is assigned to the
+parameters characterizing the Gaussian prior. As discussed in
+[8], this two-stage hierarchical model is equivalent to imposingaS t u d e n t ’ s
+-distribution on the sparse signal. Besides the
+Gaussian-inverse Gamma prior, authors in [9] employ Lap lace
+priors for the sparse signal to promote sparse solutions.
+In this letter, we introduce a new sparsity-encouraging prior,
+namely, the normal product (NP) prior, for sparse sig nal re-
+covery. A two-stage normal produ ct-based hierarchical model
+is established, and we resort to the variational Bayesian (VB)
+method to perform the inference for the hie rarchical model. Our
+experiments show that the proposed algorithm achieves similar
+performance as the sparse Bayesian learning method, while with
+lower computational complexity.
+II. T HEBAYESIAN NETWORK
+In the context of compressed sensing, we are given a noise
+corrupted linear measurements of a vector
+(1)
+Here is an underdetermined measurement matrix
+with low coherence of columns, represents the acquisi-
+tion noise vector and a sparse signal. For the inverse problem,
+both and are unknown, and our goal is to recover from
+. We formulate the observation noise as zero mean indepen-
+dent Gaussian variable with variance i.e.
+and seek a sparse estimation for .
+In this section, we utilize a two -layer hierarchical Bayesian
+prior model for the signal. In the ﬁrst stage of prior, we use the
+normal product (NP) distribution as sparseness prior:
+where stands for its mean and given as a diag-
+onal matrix represents its
+covariance matrix. For each element of, its probability den-
+sity distribution is , which exhibits a sharp peak at
+the origin and heavy tails, where is the zero order modi-
+ﬁed Bessel function of the second kind [10] thus the probability
+density function (PDF) of is
+(2)
+A NP distributed scaler variable can be decomposed
+into th e product of two independent normally distributed vari-
+ables i.e. if ,t h e nt h e r ea r e and
+satisfying with moment relationship
+[11]. We call this property as the generating rule of
+normal product distribution. Similarly for the vector , we can
+1070-9908 © 2014 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See http://www.ieee.org/publications_standards/publi cations/rights/index.ht ml for more information.Authorized licensed use limited to: University of Electronic Science and Tech of China. Downloaded on September 18,2023 at 09:26:40 UTC from IEEE Xplore.  Restrictions apply. 
+===== PAGE 2 =====
+584 IEEE SIGNAL PROCESSING LETTERS, VOL. 22, NO. 5, MAY 2015
+decompose it into the Hadamard product of two independent vir-
+tual normally distributed vector variables and whose covari-
+ance matrix are diagonal matrix
+and respectively i.e. and
+,w h e r e denotes the Hadamard product. Finally,
+we set as a realization of Gamma hyperprior and
+choose , to construct a sharper distribution of
+during the variational procedure [12] for the second stage of the
+signal model.
+According to the generating rule of normal product men-
+tioned above, the two parallel normally distributed variables
+and can be introduced as the hidden variables. By i ntegrating
+out it, the posterior distribution can be expressed as:
+where
+and denotes the Dirac Delta function. In this expression, we
+know that the value of must be equal to while keeping the
+value of nonzero. Consider the Bayesian
+Risk function:
+where
+and represents the loss function. Thus, we can replace
+with in the inference
+procedure while maintaining the value of the Bayesian risk
+function at a consistent level. So the modi ﬁed Bayesian Net-
+work is:
+(3)
+(4)
+(5)
+(6)
+as depicted in Fig. 2.
+III. T HEVARATIONAL BAYESIAN INFERENCE
+In order to infer the bayesian network, we use the mean-
+ﬁeld variational Bayesian method to analytically approximate
+the entire posterior distribution of latent variables. In this the-
+orem, it was assumed that the approximate variational distribu-tion
+where stands for the latent variable in the model
+could be factorized into the product for the par-
+tition of. It could be shown that the solution of the
+variational method for each factor c o u l db ew r i t t e na s :
+Fig. 1. Three kinds of PDF with the same standard deviation.
+Fig. 2. The Bayesian network.
+where means taking the expectation over
+the set of using the variational distribution except [13].
+Applying the variational Bayesian method upon the Bayesianmodel mentioned in Section II, the posterior approximation of
+are respectively:
+(7)
+(8)
+(9)
+A. Posterior Approximation of and
+Substituting (3), (4), (5) and (6) into (8), we can arrive at:
+where
+and
+Authorized licensed use limited to: University of Electronic Science and Tech of China. Downloaded on September 18,2023 at 09:26:40 UTC from IEEE Xplore.  Restrictions apply. 
+===== PAGE 3 =====
+ZHOU et al. : BAYESIAN COMPRESSIVE SENSING USING NORMAL PRODUCT PRIORS 585
+From the principle of variational inference, we know that
+is an approximation of i.e. a n di no r d e r
+to get a more concise iteration fo rmula, we choose the relaxation
+of the secondary moment as:
+This relaxation can be interpreted as ignoring the posterior
+variance during the updating, w hich is inspired by the fact that
+after the learning procedure the posterior variance always ap-
+proaches zero to ensure the post erior mean’s concentration on
+the estimated value.
+Then the corrected post erior approximation is
+where
+and
+In the noise free case, using Woodbury identity we have:
+(10)
+and
+(11)
+Similarly, for , substituting (3), (4), (5) and (6) into (7) we
+have:
+where
+and
+So the corrected approximation is:
+Then again, in the noiseless case, we have
+(12)and
+(13)
+B. Posterior Approximation of
+A sd i s c u s s e di nS e c t i o nI I ,w eh a v e :
+Substituting (4), (5), (6) into (9 ) and using the separability of
+, it can be shown that:
+which means
+and
+(14)
+Similarly, we have:
+and
+(15)
+C. Proposed Algorithms
+As a result, we use terms “NP-0” and “NP-1” to denote the
+inference procedure of the one layer signal model and the twolayer signal model respectively. The difference between NP-0
+and NP-1 is whether the learning process updates precision of
+normal product prior.
+Algorithm 1: NP-0
+Input: ,
+Output:
+1: , , , ,
+, ,
+2:while and do
+3: Update using (12)
+4: Update using (10)
+5: Update
+6:
+Authorized licensed use limited to: University of Electronic Science and Tech of China. Downloaded on September 18,2023 at 09:26:40 UTC from IEEE Xplore.  Restrictions apply. 
+===== PAGE 4 =====
+586 IEEE SIGNAL PROCESSING LETTERS, VOL. 22, NO. 5, MAY 2015
+7:end while
+The algorithm NP-0 looks like the FOCUSS algorithm [14],
+but one of the most fundamental distinctions between them isthat NP-0 uses
+and , the decomposed com-
+ponent of , in an interleaved way to update while
+FOCUSS uses the whole to directly update .I n
+Section IV, we experimentally illustrate that the reconstruction
+performance of NP-0 is comparable to basis pursuit (BP)[4]
+which outperforms the basic FOCUSS [8]. Furthermore, we setthe initial value of the algorithm as a constant to avoid the local
+minimum results being returned.
+Algorithm 2: NP-1
+Input: ,
+Output:
+1: , , , ,,
+2:while and do
+3: Update using (12)
+4: Update using (13)
+5: Update using (10)
+6: Update using (11)
+7:
+8: Update using (14)
+9: Update using (15)
+10:
+11:end while
+In the algorithm NP-1, two spar se Bayesian learning (SBL)
+[6], [8] procedures ar e coupled to each other and we will exper-
+imentally prove that the mean squared error (MSE) via NP-1
+descends faster than SBL in Section IV.
+IV. N UMERICAL RESULTS
+In this section, we compare our proposed algorithms among
+SBL, iterative reweighted leas t squares (IRLS)[15] and BP. In
+the following results, we set the dimension of the original signalto be 100 and in each experiment every entry of the sensing
+matrix
+is uniformly distributed as standard normal random
+variable. We ignore the observation noise and only consider thealgorithm performance in the noi se free case. The stop criterion
+parameters
+and in both algorithm NP-0 and NP-1 are set
+as and 300 respectively.
+The success rate in Fig. 3 is de ﬁned by the average probability
+of successful restoration, which is counted as the ratio between
+the number of successful trials and the total number of the inde-pendent experiments. It collects the result of 300 Monte Carlo
+trials and we assume successful trial if
+,
+where is the estimate of the original signal . MSE in Fig. 4
+which measures the average of the squares of the difference be-
+tween the estimator and estimated signal is calculated as follow:
+Fig. 3. Simulation results of success rate. (a) ,( b ) .
+Fig. 4. Simulation results of computational cost. (a) , .( b )
+, .
+Fig. 3 demonstrates the superio r performance of the NP-1 al-
+gorithm in a few measurements . It shows the success rate of
+the respective algorithms ver sus the number of measurement
+and sparse level of the signal. We can see that the re-
+construction performance of the one layer normal product algo-
+rithm(NP-0) is almost the same as BP, which is the MAP esti-
+mation of unknowns in the one layer Laplace prior framework.
+The comparisons also show that the two layers normal productalgorithm(NP-1) requires as f ew number of CS measurements
+as SBL while inheriting the similar reconstruction precision.
+In Fig. 4, the comparison among the computational cost of
+the three algorithms on the reconstruction performance is per-
+formed on a personal PC with dual-core 3.1 GHz CPU and 4 GB
+RAM. It is interesting to note that the MSE of NP-1 descendsfaster than SBL in Fig. 4(a) while it has the same sparsity-under-
+sampling tradeoff performance as SBL. It should also be noticed
+that we haven’t used any basis pruning technology as in [16] toreduce the computational complexity. To understand the reason
+of low computational time, from Fig. 4(b), we observe that the
+NP-1 requires only a few numbers of iterations to arrive at thestop condition. In summary, these experimental results con ﬁrm
+that the NP-1 is a fast sparse Bayesian algorithm.
+V. C
+ONCULSION
+In this letter, we formulated a normal product prior based
+Bayesian framework to solve the compressed sensing problem
+in the noise free case. Using thi s framework, we derived two
+algorithms, namely, NP-0 an d NP-1 and compared them with
+different algorithms. We had shown that the reconstruction per-
+formance of our algorithm NP-1 is similar to SBL while the in-
+terleaved updating procedure p rovides improved performance
+in terms of running times.
+Authorized licensed use limited to: University of Electronic Science and Tech of China. Downloaded on September 18,2023 at 09:26:40 UTC from IEEE Xplore.  Restrictions apply. 
+===== PAGE 5 =====
+ZHOU et al. : BAYESIAN COMPRESSIVE SENSING USING NORMAL PRODUCT PRIORS 587
+REFERENCES
+[1] D. L. Donoho, “Compressed sensing,” IEEE Trans. Inf. Theory , vol.
+52, no. 4, pp. 1289–1306, 2006.
+[2] E. J. Candès, J. Romberg, and T. Tao, “Robust uncertainty principles:
+Exact signal reconstruction from highly incomplete frequency infor-mation,” IEEE Tran. Inf. Theory , vol. 52, no. 2, pp. 489–509, 2006.
+[ 3 ] J .A .T r o p pa n dA .C .G i l b e r t ,“ S i g nal recovery from random measure-
+ments via orthogonal matching pursuit,” IEEE Trans. Inf. Theory , vol.
+53, no. 12, pp. 4655–4666, 2007.
+[4] S. S. Chen, D. L. Donoho, and M. A. Saunders, “Atomic decomposition
+by basis pursuit,” SIAM J. Sci. Comput. , vol. 20, no. 1, pp. 33–61, 1998.
+[5] R. Chartrand, “Exact reconstruction of sparse signals via nonconvex
+minimization,” IEEE Signal Process. Lett. , vol. 14, no. 10, pp.
+707–710, 2007.
+[6] M. E. Tipping, “Sparse bayesian learning and the relevance vector ma-
+chine,” J. Mach. Learn. Res. , vol. 1, pp. 211–244, 2001.
+[ 7 ] S .J i ,Y .X u e ,a n dL .C a r i n ,“ B a y e s i a nc o m p r e s s i v es e n s i n g , ” IEEE
+Trans. Signal Process. , vol. 56, no. 6, pp. 2346–2356, 2008.
+[ 8 ] D .P .W i p fa n dB .D .R a o ,“ S p a r s eb a y e s i a nl e a r n i n gf o rb a s i ss e l e c -
+tion,” IEEE Trans. Signal Process. , vol. 52, no. 8, pp. 2153–2164, 2004.[9] S. D. Babacan, R. Molina, and A. K. Katsaggelos, “Bayesian compres-
+sive sensing using laplace priors,” IEEE Trans. Image Process. , vol.
+19, no. 1, pp. 53–63, 2010.
+[10] E. W. Weisstein, “Normal product distribution. MathWorld–A wol-
+fram web resource,” [Online]. Available: http://mathworld.wolfram.com/NormalProductDistribution.html
+[11] A. SEIJAS-MACÍAS and A. Oliveira, “An approach to distribution
+of the product of two normal variables,” Discuss. Math.: Probabil.
+Statist. , vol. 32, 2012.
+[12] D. Wipf, J. Palmer, and B. Rao, “Perspectives on sparse bayesian
+learning,” Comput. Eng. , vol. 16, no. 1, p. 249, 2004.
+[13] D. G. Tzikas, C. Likas, and N. P. Galatsanos, “The variational approx-
+imation for bayesian inference,” IEEE Signal Process. Mag. , vol. 25,
+no. 6, pp. 131–146, 2008.
+[14] I. F. Gorodnitsky and B. D. Rao, “Sparse signal reconstruction from
+limited data using focuss: A re-weighted minimum norm algorithm,”IEEE Trans. Signal Process. , vol. 45, no. 3, pp. 600–616, 1997.
+[15] R. Chartrand and W. Yin, “Iterativ ely reweighted algorithms for com-
+pressive sensing,” in Proc. ICASSP , 2008, pp. 3869–3872.
+[16] M. E. Tipping and A. C. Faul et al. , “Fast marginal likelihood max-
+imisation for sparse bayesian models,” in Proc. 9th Int. Workshop on
+AIStats ,2 0 0 3 ,v o l .1 ,n o .3 .
+Authorized licensed use limited to: University of Electronic Science and Tech of China. Downloaded on September 18,2023 at 09:26:40 UTC from IEEE Xplore.  Restrictions apply. 
