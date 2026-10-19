@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Normal Product Priors：组长统一实验框架
 
 对应《Bayesian Compressive Sensing Using Normal Product Priors》，Zhou Zhou、Kaihui Liu、Jun Fang，IEEE SPL 22(5), 2015，DOI 10.1109/LSP.2014.2364255。
@@ -54,3 +55,7 @@ python main.py package --out dist/leader_submission.zip
 ## 论文口径
 
 详见 `docs/论文实验口径.md`。特别注意：普通 MSE、NMSE 和论文的 MSE(dB) 是不同字段；BP 必须解等式约束 L1 问题，不能把带正则参数的 Lasso 当作无噪声 BP。
+=======
+# Bayesian
+uestc class project
+>>>>>>> 1fd7845df5a6ed57950c923954f426d17fb440f1
