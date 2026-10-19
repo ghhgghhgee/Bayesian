@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+tmp/
+data/
+dist/
+results/**/estimates.npz
+results/**/histories.npz

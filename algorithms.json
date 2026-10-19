@@ -1,0 +1,8 @@
+{
+  "NP0": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，待核心实现组替换/复核", "params": {"kind": "NP0"}},
+  "NP1": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，待核心实现组替换/复核", "params": {"kind": "NP1"}},
+  "SBL": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，EM版，待基线组复核", "params": {"kind": "SBL", "convergence_tol": 0.000001}},
+  "IRLS": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，局部平滑延续版，非原作者代码", "params": {"kind": "IRLS", "p": 0.5}},
+  "FOCUSS": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，额外基线", "params": {"kind": "FOCUSS", "p": 0.0}},
+  "BP": {"entrypoint": "bcs.algorithms:solve", "owner": "SciPy HiGHS 线性规划，组长封装", "params": {"kind": "BP"}}
+}
