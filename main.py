@@ -216,7 +216,7 @@ def plot(directory):
         _, _, truth = generate(config["n"], 30, 3, config["seed"], 0, config["amplitudes"])
         fig, axes = plt.subplots(1, 2, figsize=(10, 4), constrained_layout=True)
         with np.load(directory/"histories.npz") as data:
-            for name in ("NP1", "SBL", "IRLS"):
+            for name in config["algorithms"]:
                 key = f"m30_k3_t0_{name}"
                 if key not in data:
                     continue

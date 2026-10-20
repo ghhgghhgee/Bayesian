@@ -1,0 +1,825 @@
+{
+  "passed": true,
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.2.4",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "script_sha256": "b6292f154980765d0958b05274416bad9f01c4a73936b7f61a06daadf5a1504b",
+  "runs": [
+    {
+      "directory": "D:\\研一上\\贝叶斯与随机矩阵\\Bayes_project\\Bayesian\\results\\np0_20261020_smoke_a",
+      "passed": true,
+      "checks": {
+        "manifest_complete_without_errors": 1,
+        "manifest_output_integrity": 6,
+        "dataset_file_integrity": 1,
+        "trial_row_count": 1,
+        "unique_trial_records": 1,
+        "complete_trial_keys": 1,
+        "estimate_keys": 1,
+        "history_keys": 1,
+        "regenerated_dataset_equal": 45,
+        "no_algorithm_error": 30,
+        "regenerated_data_hash_matches": 30,
+        "algorithm_seed_matches": 30,
+        "estimate_shape_and_finite": 30,
+        "history_shape_and_finite": 30,
+        "time_contract": 30,
+        "iteration_count": 30,
+        "final_history_equal": 30,
+        "elapsed_time_bounds": 30,
+        "stopping_status_consistent": 30,
+        "trial_metric_mse": 30,
+        "trial_metric_nmse": 30,
+        "trial_metric_relative_error": 30,
+        "trial_metric_paper_mse_db": 30,
+        "trial_success_threshold": 30,
+        "algorithms_share_data_hash": 15,
+        "summary_groups": 1,
+        "summary_trials": 6,
+        "summary_errors": 6,
+        "summary_successes": 6,
+        "summary_success_rate": 6,
+        "summary_mean_mse": 6,
+        "summary_mean_nmse": 6,
+        "summary_mean_iterations": 6,
+        "summary_median_seconds": 6
+      },
+      "failures": {},
+      "failure_examples": [],
+      "config": {
+        "n": 100,
+        "seed": 20261019,
+        "trials": 5,
+        "amplitudes": "normal",
+        "max_iter": 300,
+        "tol": 0.001,
+        "success_threshold": 0.001,
+        "cases": [
+          [
+            10,
+            3
+          ],
+          [
+            30,
+            3
+          ],
+          [
+            30,
+            15
+          ]
+        ],
+        "algorithms": [
+          "NP0",
+          "NP0_MEMBER"
+        ]
+      },
+      "independent_summary": [
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP0",
+          "trials": 5,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.018163351087525887,
+          "mean_nmse": 0.46590645435853995,
+          "mean_iterations": 60.0,
+          "median_seconds": 0.00425649999988309,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.1651076171339683e-15
+        },
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP0_MEMBER",
+          "trials": 5,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.018163351087525887,
+          "mean_nmse": 0.46590645435853995,
+          "mean_iterations": 60.0,
+          "median_seconds": 0.0037485000000287982,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.1651076171339683e-15
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP0",
+          "trials": 5,
+          "errors": 0,
+          "successes": 5,
+          "success_rate": 1.0,
+          "mean_mse": 3.253302724391355e-11,
+          "mean_nmse": 1.0081589604886748e-09,
+          "mean_iterations": 4.6,
+          "median_seconds": 0.0015171999998528918,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.3845016126728911e-15
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP0_MEMBER",
+          "trials": 5,
+          "errors": 0,
+          "successes": 5,
+          "success_rate": 1.0,
+          "mean_mse": 3.253302724391355e-11,
+          "mean_nmse": 1.0081589604886748e-09,
+          "mean_iterations": 4.6,
+          "median_seconds": 0.0013753999999153166,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.3845016126728911e-15
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP0",
+          "trials": 5,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.02846948742953176,
+          "mean_nmse": 0.2790985717170515,
+          "mean_iterations": 28.4,
+          "median_seconds": 0.007777400000122725,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.4260910627545602e-15
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP0_MEMBER",
+          "trials": 5,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.02846948742953176,
+          "mean_nmse": 0.2790985717170515,
+          "mean_iterations": 28.4,
+          "median_seconds": 0.006698600000163424,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.4260910627545602e-15
+        }
+      ],
+      "algorithm_pair_differences": [
+        {
+          "m": 10,
+          "k": 3,
+          "trials": 5,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "trials": 5,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "trials": 5,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        }
+      ],
+      "max_absolute_trial_metric_difference": {
+        "mse": 0.0,
+        "nmse": 0.0,
+        "relative_error": 0.0,
+        "paper_mse_db": 0.0
+      },
+      "manifest_sha256": "39c9fbc812ca291931def897a9fb82732b2437cb1b782ad326e35321eeb63eb1",
+      "note": "Metrics recalculated directly from saved estimates and regenerated truth; bcs.metrics is not used. Different rcond values do not require identical NP0 and NP0_MEMBER estimates."
+    },
+    {
+      "directory": "D:\\研一上\\贝叶斯与随机矩阵\\Bayes_project\\Bayesian\\results\\np0_20261020_smoke_b",
+      "passed": true,
+      "checks": {
+        "manifest_complete_without_errors": 1,
+        "manifest_output_integrity": 4,
+        "dataset_file_integrity": 1,
+        "trial_row_count": 1,
+        "unique_trial_records": 1,
+        "complete_trial_keys": 1,
+        "estimate_keys": 1,
+        "history_keys": 1,
+        "regenerated_dataset_equal": 45,
+        "no_algorithm_error": 30,
+        "regenerated_data_hash_matches": 30,
+        "algorithm_seed_matches": 30,
+        "estimate_shape_and_finite": 30,
+        "history_shape_and_finite": 30,
+        "time_contract": 30,
+        "iteration_count": 30,
+        "final_history_equal": 30,
+        "elapsed_time_bounds": 30,
+        "stopping_status_consistent": 30,
+        "trial_metric_mse": 30,
+        "trial_metric_nmse": 30,
+        "trial_metric_relative_error": 30,
+        "trial_metric_paper_mse_db": 30,
+        "trial_success_threshold": 30,
+        "algorithms_share_data_hash": 15,
+        "summary_groups": 1,
+        "summary_trials": 6,
+        "summary_errors": 6,
+        "summary_successes": 6,
+        "summary_success_rate": 6,
+        "summary_mean_mse": 6,
+        "summary_mean_nmse": 6,
+        "summary_mean_iterations": 6,
+        "summary_median_seconds": 6
+      },
+      "failures": {},
+      "failure_examples": [],
+      "config": {
+        "n": 100,
+        "seed": 20261019,
+        "trials": 5,
+        "amplitudes": "normal",
+        "max_iter": 300,
+        "tol": 0.001,
+        "success_threshold": 0.001,
+        "cases": [
+          [
+            10,
+            3
+          ],
+          [
+            30,
+            3
+          ],
+          [
+            30,
+            15
+          ]
+        ],
+        "algorithms": [
+          "NP0",
+          "NP0_MEMBER"
+        ]
+      },
+      "independent_summary": [
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP0",
+          "trials": 5,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.018163351087525887,
+          "mean_nmse": 0.46590645435853995,
+          "mean_iterations": 60.0,
+          "median_seconds": 0.004269799999974566,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.1651076171339683e-15
+        },
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP0_MEMBER",
+          "trials": 5,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.018163351087525887,
+          "mean_nmse": 0.46590645435853995,
+          "mean_iterations": 60.0,
+          "median_seconds": 0.0037382000000434346,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.1651076171339683e-15
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP0",
+          "trials": 5,
+          "errors": 0,
+          "successes": 5,
+          "success_rate": 1.0,
+          "mean_mse": 3.253302724391355e-11,
+          "mean_nmse": 1.0081589604886748e-09,
+          "mean_iterations": 4.6,
+          "median_seconds": 0.0015573000000586035,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.3845016126728911e-15
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP0_MEMBER",
+          "trials": 5,
+          "errors": 0,
+          "successes": 5,
+          "success_rate": 1.0,
+          "mean_mse": 3.253302724391355e-11,
+          "mean_nmse": 1.0081589604886748e-09,
+          "mean_iterations": 4.6,
+          "median_seconds": 0.0014120000000730215,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.3845016126728911e-15
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP0",
+          "trials": 5,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.02846948742953176,
+          "mean_nmse": 0.2790985717170515,
+          "mean_iterations": 28.4,
+          "median_seconds": 0.007380999999895721,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.4260910627545602e-15
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP0_MEMBER",
+          "trials": 5,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.02846948742953176,
+          "mean_nmse": 0.2790985717170515,
+          "mean_iterations": 28.4,
+          "median_seconds": 0.006682700000055775,
+          "converged": 5,
+          "max_relative_measurement_residual": 1.4260910627545602e-15
+        }
+      ],
+      "algorithm_pair_differences": [
+        {
+          "m": 10,
+          "k": 3,
+          "trials": 5,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "trials": 5,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "trials": 5,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        }
+      ],
+      "max_absolute_trial_metric_difference": {
+        "mse": 0.0,
+        "nmse": 0.0,
+        "relative_error": 0.0,
+        "paper_mse_db": 0.0
+      },
+      "manifest_sha256": "17e456c46ebb82db195cc94de84ac3c5590eda45b1c6a0a8ba031d2e62f93b2f",
+      "note": "Metrics recalculated directly from saved estimates and regenerated truth; bcs.metrics is not used. Different rcond values do not require identical NP0 and NP0_MEMBER estimates."
+    },
+    {
+      "directory": "D:\\研一上\\贝叶斯与随机矩阵\\Bayes_project\\Bayesian\\results\\np0_20261020_validation_a",
+      "passed": true,
+      "checks": {
+        "manifest_complete_without_errors": 1,
+        "manifest_output_integrity": 6,
+        "dataset_file_integrity": 1,
+        "trial_row_count": 1,
+        "unique_trial_records": 1,
+        "complete_trial_keys": 1,
+        "estimate_keys": 1,
+        "history_keys": 1,
+        "regenerated_dataset_equal": 2700,
+        "no_algorithm_error": 1800,
+        "regenerated_data_hash_matches": 1800,
+        "algorithm_seed_matches": 1800,
+        "estimate_shape_and_finite": 1800,
+        "history_shape_and_finite": 1800,
+        "time_contract": 1800,
+        "iteration_count": 1800,
+        "final_history_equal": 1800,
+        "elapsed_time_bounds": 1800,
+        "stopping_status_consistent": 1800,
+        "trial_metric_mse": 1800,
+        "trial_metric_nmse": 1800,
+        "trial_metric_relative_error": 1800,
+        "trial_metric_paper_mse_db": 1800,
+        "trial_success_threshold": 1800,
+        "algorithms_share_data_hash": 900,
+        "summary_groups": 1,
+        "summary_trials": 6,
+        "summary_errors": 6,
+        "summary_successes": 6,
+        "summary_success_rate": 6,
+        "summary_mean_mse": 6,
+        "summary_mean_nmse": 6,
+        "summary_mean_iterations": 6,
+        "summary_median_seconds": 6
+      },
+      "failures": {},
+      "failure_examples": [],
+      "config": {
+        "n": 100,
+        "seed": 20261019,
+        "trials": 300,
+        "amplitudes": "normal",
+        "max_iter": 300,
+        "tol": 0.001,
+        "success_threshold": 0.001,
+        "cases": [
+          [
+            10,
+            3
+          ],
+          [
+            30,
+            3
+          ],
+          [
+            30,
+            15
+          ]
+        ],
+        "algorithms": [
+          "NP0",
+          "NP0_MEMBER"
+        ]
+      },
+      "independent_summary": [
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP0",
+          "trials": 300,
+          "errors": 0,
+          "successes": 18,
+          "success_rate": 0.06,
+          "mean_mse": 0.014183846221988018,
+          "mean_nmse": 0.4499758791518977,
+          "mean_iterations": 33.72,
+          "median_seconds": 0.0025068500000315908,
+          "converged": 300,
+          "max_relative_measurement_residual": 3.688965981209923e-15
+        },
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP0_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 18,
+          "success_rate": 0.06,
+          "mean_mse": 0.014183846221988018,
+          "mean_nmse": 0.4499758791518977,
+          "mean_iterations": 33.72,
+          "median_seconds": 0.0020784499999990658,
+          "converged": 300,
+          "max_relative_measurement_residual": 3.688965981209923e-15
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP0",
+          "trials": 300,
+          "errors": 0,
+          "successes": 300,
+          "success_rate": 1.0,
+          "mean_mse": 9.041544829172425e-11,
+          "mean_nmse": 2.7275094144465055e-09,
+          "mean_iterations": 4.776666666666666,
+          "median_seconds": 0.0017358000000058382,
+          "converged": 300,
+          "max_relative_measurement_residual": 9.929465343291274e-15
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP0_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 300,
+          "success_rate": 1.0,
+          "mean_mse": 9.041544829172425e-11,
+          "mean_nmse": 2.7275094144465055e-09,
+          "mean_iterations": 4.776666666666666,
+          "median_seconds": 0.0014373000000205138,
+          "converged": 300,
+          "max_relative_measurement_residual": 9.929465343291274e-15
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP0",
+          "trials": 300,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.0505293151894475,
+          "mean_nmse": 0.3405306280908945,
+          "mean_iterations": 32.95666666666666,
+          "median_seconds": 0.008904550000011113,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.1899608720215673e-14
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP0_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.0505293151894475,
+          "mean_nmse": 0.3405306280908945,
+          "mean_iterations": 32.95666666666666,
+          "median_seconds": 0.008404049999967356,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.1899608720215673e-14
+        }
+      ],
+      "algorithm_pair_differences": [
+        {
+          "m": 10,
+          "k": 3,
+          "trials": 300,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "trials": 300,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "trials": 300,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        }
+      ],
+      "max_absolute_trial_metric_difference": {
+        "mse": 0.0,
+        "nmse": 0.0,
+        "relative_error": 0.0,
+        "paper_mse_db": 0.0
+      },
+      "manifest_sha256": "3f3c2e9569eda05d3e29569d70f662ca56c8c40299ae190ec3e186b2739da34b",
+      "note": "Metrics recalculated directly from saved estimates and regenerated truth; bcs.metrics is not used. Different rcond values do not require identical NP0 and NP0_MEMBER estimates."
+    },
+    {
+      "directory": "D:\\研一上\\贝叶斯与随机矩阵\\Bayes_project\\Bayesian\\results\\np0_20261020_validation_b",
+      "passed": true,
+      "checks": {
+        "manifest_complete_without_errors": 1,
+        "manifest_output_integrity": 4,
+        "dataset_file_integrity": 1,
+        "trial_row_count": 1,
+        "unique_trial_records": 1,
+        "complete_trial_keys": 1,
+        "estimate_keys": 1,
+        "history_keys": 1,
+        "regenerated_dataset_equal": 2700,
+        "no_algorithm_error": 1800,
+        "regenerated_data_hash_matches": 1800,
+        "algorithm_seed_matches": 1800,
+        "estimate_shape_and_finite": 1800,
+        "history_shape_and_finite": 1800,
+        "time_contract": 1800,
+        "iteration_count": 1800,
+        "final_history_equal": 1800,
+        "elapsed_time_bounds": 1800,
+        "stopping_status_consistent": 1800,
+        "trial_metric_mse": 1800,
+        "trial_metric_nmse": 1800,
+        "trial_metric_relative_error": 1800,
+        "trial_metric_paper_mse_db": 1800,
+        "trial_success_threshold": 1800,
+        "algorithms_share_data_hash": 900,
+        "summary_groups": 1,
+        "summary_trials": 6,
+        "summary_errors": 6,
+        "summary_successes": 6,
+        "summary_success_rate": 6,
+        "summary_mean_mse": 6,
+        "summary_mean_nmse": 6,
+        "summary_mean_iterations": 6,
+        "summary_median_seconds": 6
+      },
+      "failures": {},
+      "failure_examples": [],
+      "config": {
+        "n": 100,
+        "seed": 20261019,
+        "trials": 300,
+        "amplitudes": "normal",
+        "max_iter": 300,
+        "tol": 0.001,
+        "success_threshold": 0.001,
+        "cases": [
+          [
+            10,
+            3
+          ],
+          [
+            30,
+            3
+          ],
+          [
+            30,
+            15
+          ]
+        ],
+        "algorithms": [
+          "NP0",
+          "NP0_MEMBER"
+        ]
+      },
+      "independent_summary": [
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP0",
+          "trials": 300,
+          "errors": 0,
+          "successes": 18,
+          "success_rate": 0.06,
+          "mean_mse": 0.014183846221988018,
+          "mean_nmse": 0.4499758791518977,
+          "mean_iterations": 33.72,
+          "median_seconds": 0.0025065500000209795,
+          "converged": 300,
+          "max_relative_measurement_residual": 3.688965981209923e-15
+        },
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP0_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 18,
+          "success_rate": 0.06,
+          "mean_mse": 0.014183846221988018,
+          "mean_nmse": 0.4499758791518977,
+          "mean_iterations": 33.72,
+          "median_seconds": 0.0020532500001309018,
+          "converged": 300,
+          "max_relative_measurement_residual": 3.688965981209923e-15
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP0",
+          "trials": 300,
+          "errors": 0,
+          "successes": 300,
+          "success_rate": 1.0,
+          "mean_mse": 9.041544829172425e-11,
+          "mean_nmse": 2.7275094144465055e-09,
+          "mean_iterations": 4.776666666666666,
+          "median_seconds": 0.0016724499998872489,
+          "converged": 300,
+          "max_relative_measurement_residual": 9.929465343291274e-15
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP0_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 300,
+          "success_rate": 1.0,
+          "mean_mse": 9.041544829172425e-11,
+          "mean_nmse": 2.7275094144465055e-09,
+          "mean_iterations": 4.776666666666666,
+          "median_seconds": 0.0013874999999643478,
+          "converged": 300,
+          "max_relative_measurement_residual": 9.929465343291274e-15
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP0",
+          "trials": 300,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.0505293151894475,
+          "mean_nmse": 0.3405306280908945,
+          "mean_iterations": 32.95666666666666,
+          "median_seconds": 0.008784900000136986,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.1899608720215673e-14
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP0_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 0,
+          "success_rate": 0.0,
+          "mean_mse": 0.0505293151894475,
+          "mean_nmse": 0.3405306280908945,
+          "mean_iterations": 32.95666666666666,
+          "median_seconds": 0.00805864999995265,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.1899608720215673e-14
+        }
+      ],
+      "algorithm_pair_differences": [
+        {
+          "m": 10,
+          "k": 3,
+          "trials": 300,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "trials": 300,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "trials": 300,
+          "max_l2": 0.0,
+          "median_l2": 0.0,
+          "max_max_abs": 0.0,
+          "median_max_abs": 0.0,
+          "max_relative_to_truth": 0.0,
+          "median_relative_to_truth": 0.0
+        }
+      ],
+      "max_absolute_trial_metric_difference": {
+        "mse": 0.0,
+        "nmse": 0.0,
+        "relative_error": 0.0,
+        "paper_mse_db": 0.0
+      },
+      "manifest_sha256": "7984ab86bdb2bce344ed7de93f2fbf886d7c2cc0b00391a4832532d189a78360",
+      "note": "Metrics recalculated directly from saved estimates and regenerated truth; bcs.metrics is not used. Different rcond values do not require identical NP0 and NP0_MEMBER estimates."
+    }
+  ]
+}

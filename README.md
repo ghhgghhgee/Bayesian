@@ -1,13 +1,14 @@
-<<<<<<< HEAD
 # Normal Product Priors：组长统一实验框架
 
 对应《Bayesian Compressive Sensing Using Normal Product Priors》，Zhou Zhou、Kaihui Liu、Jun Fang，IEEE SPL 22(5), 2015，DOI 10.1109/LSP.2014.2364255。
 
-此目录包含组长的数据生成、指标计算、算法调度、独立进程复跑比对、结果汇总和打包工具。现有 NP0/NP1/SBL/IRLS/FOCUSS 是本次新增的参考实现，BP 是 SciPy HiGHS 的等式约束线性规划封装。尚未收到组员代码，因此不能声称已经交叉复跑全员实现。详见 `docs/交付与验收.md`。
+此目录包含组长的数据生成、指标计算、算法调度、独立进程复跑比对、结果汇总和打包工具。NP0/NP1/SBL/IRLS/FOCUSS 为组长参考实现，BP 是 SciPy HiGHS 的等式约束线性规划封装。本分支另接入 NP0_MEMBER 成员实现，已通过本机测试及代表工况复跑，跨成员独立环境复核仍待完成。详见 `docs/交付与验收.md`。
 
 ## 运行
 
 建议 Python 3.11 或 3.12。系统自带的旧 Anaconda Python 3.8 不适用锁定依赖。
+
+数据由 `bcs/data.py` 按配置和固定种子生成，无需下载外部数据（synthetic dataset; no external data download）。`python main.py generate --config configs/np0_smoke.json` 会在忽略目录 `data/` 保存共享数据缓存及生成参数。
 
 ```powershell
 python -m venv .venv
@@ -55,7 +56,25 @@ python main.py package --out dist/leader_submission.zip
 ## 论文口径
 
 详见 `docs/论文实验口径.md`。特别注意：普通 MSE、NMSE 和论文的 MSE(dB) 是不同字段；BP 必须解等式约束 L1 问题，不能把带正则参数的 Lasso 当作无噪声 BP。
-=======
-# Bayesian
-uestc class project
->>>>>>> 1fd7845df5a6ed57950c923954f426d17fb440f1
+
+## NP-0 成员实现
+
+`algorithms/np0.py` 提供无噪声 NP-0 的独立实现，接口为
+`np0(A, y, eps=1e-3, max_iter=300)`，默认返回信号估计；
+`return_info=True` 同时返回迭代诊断。公式、输入约定与适用范围见
+[`docs/np0.md`](docs/np0.md)。
+
+统一框架入口为 `algorithms.np0:solve`，已在 `algorithms.json` 注册为
+`NP0_MEMBER`。`configs/np0_smoke.json` 同时列出组长 `NP0` 和成员
+`NP0_MEMBER`，共享相同的 A/y；运行命令为：
+
+```powershell
+python main.py run --config configs/np0_smoke.json --out results/np0_member_a
+```
+
+已运行小规模配置和 `configs/np0_validation.json`（3 个工况各 300 次），
+两次独立进程复跑均通过；全部 21 项测试通过。成员实现默认 `rcond=1e-15`，保留原有计算方式；
+组长参考值为 `1e-12`。统一框架使用仓库锁定依赖，独立 `np0()` 模块仅依赖 NumPy。
+
+完整命令、统计与证据见 [NP-0 测试与接入验证记录](paper-workspace/submission/artifact-repro-checklist.md)。
+代表工况验证不等于完成论文 Fig.3 全扫描。
