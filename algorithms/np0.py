@@ -8,6 +8,7 @@ Moore-Penrose pseudoinverse for each weighted sensing matrix.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from time import perf_counter
 from typing import Tuple, Union
 
 import numpy as np
@@ -65,6 +66,47 @@ def np0(
     paper's numerical experiments; it is not a noisy-observation solver.
     """
 
+    x, info, _, _ = _run_np0(
+        A, y, eps=eps, max_iter=max_iter, rcond=1e-15, record_history=False
+    )
+    return (x, info) if return_info else x
+
+
+def solve(
+    A: np.ndarray,
+    y: np.ndarray,
+    *,
+    seed: int = 0,
+    max_iter: int = 300,
+    tol: float = 1e-3,
+    rcond: float = 1e-15,
+):
+    """Adapt NP-0 to the unified experiment framework's Result interface.
+
+    ``seed`` is accepted for interface compatibility; NP-0 is deterministic
+    and does not use random state. ``tol`` maps to the standalone ``eps``.
+    ``rcond=1e-15`` preserves the original member implementation's NumPy
+    pseudoinverse cutoff; the leader reference instead defaults to 1e-12.
+    """
+
+    # Import only at the framework boundary so standalone np0 stays NumPy-only.
+    from bcs.algorithms import Result
+
+    x, info, history, times = _run_np0(
+        A, y, eps=tol, max_iter=max_iter, rcond=rcond, record_history=True
+    )
+    return Result(
+        x=x,
+        history=history,
+        times=times,
+        converged=info.converged,
+        status="converged" if info.converged else "max_iter",
+    )
+
+
+def _run_np0(A, y, *, eps, max_iter, rcond, record_history):
+    """Shared iteration for the standalone API and framework adapter."""
+
     A_array = np.asarray(A)
     y_array = np.asarray(y)
 
@@ -102,6 +144,12 @@ def np0(
         raise TypeError("max_iter must be a positive integer.")
     if max_iter < 1:
         raise ValueError("max_iter must be at least 1.")
+    try:
+        rcond_value = float(rcond)
+    except (TypeError, ValueError) as exc:
+        raise TypeError("rcond must be a finite number in [0, 1).") from exc
+    if not np.isfinite(rcond_value) or not 0 <= rcond_value < 1:
+        raise ValueError("rcond must be a finite number in [0, 1).")
 
     n = A_array.shape[1]
     # NP-0 initializes both latent factor means to ones and keeps the
@@ -112,15 +160,17 @@ def np0(
     relative_change = float("inf")
     converged = False
     iterations = 0
+    history, times = [], []
+    start = perf_counter()
 
     for iterations in range(1, int(max_iter) + 1):
         # Update a using the noiseless limit of equation (12).
         weighted_A = A_array * b[np.newaxis, :]
-        a = np.linalg.pinv(weighted_A) @ y_array
+        a = np.linalg.pinv(weighted_A, rcond=rcond_value) @ y_array
 
         # Update b using the noiseless limit of equation (10).
         weighted_A = A_array * a[np.newaxis, :]
-        b = np.linalg.pinv(weighted_A) @ y_array
+        b = np.linalg.pinv(weighted_A, rcond=rcond_value) @ y_array
 
         x_new = a * b
         if not np.all(np.isfinite(x_new)):
@@ -134,14 +184,16 @@ def np0(
             relative_change = change / previous_norm
 
         x = x_new
+        if record_history:
+            history.append(x.copy())
+            times.append(perf_counter() - start)
         if relative_change <= eps_value:
             converged = True
             break
 
-    if return_info:
-        return x, NP0Diagnostics(
-            iterations=iterations,
-            converged=converged,
-            relative_change=relative_change,
-        )
-    return x
+    info = NP0Diagnostics(
+        iterations=iterations,
+        converged=converged,
+        relative_change=relative_change,
+    )
+    return x, info, history, times

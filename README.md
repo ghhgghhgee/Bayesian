@@ -2,7 +2,7 @@
 
 对应《Bayesian Compressive Sensing Using Normal Product Priors》，Zhou Zhou、Kaihui Liu、Jun Fang，IEEE SPL 22(5), 2015，DOI 10.1109/LSP.2014.2364255。
 
-此目录包含组长的数据生成、指标计算、算法调度、独立进程复跑比对、结果汇总和打包工具。现有 NP0/NP1/SBL/IRLS/FOCUSS 是本次新增的参考实现，BP 是 SciPy HiGHS 的等式约束线性规划封装。尚未收到组员代码，因此不能声称已经交叉复跑全员实现。详见 `docs/交付与验收.md`。
+此目录包含组长的数据生成、指标计算、算法调度、独立进程复跑比对、结果汇总和打包工具。NP0/NP1/SBL/IRLS/FOCUSS 为组长参考实现，BP 是 SciPy HiGHS 的等式约束线性规划封装。本分支另接入 NP0_MEMBER 成员实现；成员代码的运行与独立交叉复核仍待完成。详见 `docs/交付与验收.md`。
 
 ## 运行
 
@@ -61,3 +61,14 @@ python main.py package --out dist/leader_submission.zip
 `np0(A, y, eps=1e-3, max_iter=300)`，默认返回信号估计；
 `return_info=True` 同时返回迭代诊断。公式、输入约定与适用范围见
 [`docs/np0.md`](docs/np0.md)。
+
+统一框架入口为 `algorithms.np0:solve`，已在 `algorithms.json` 注册为
+`NP0_MEMBER`。`configs/np0_smoke.json` 同时列出组长 `NP0` 和成员
+`NP0_MEMBER`，共享相同的 A/y；运行命令为：
+
+```powershell
+python main.py run --config configs/np0_smoke.json --out results/np0_member_a
+```
+
+此配置已提供，尚未执行。成员实现默认 `rcond=1e-15`，保留原有计算方式；
+组长参考值为 `1e-12`。统一框架使用仓库锁定依赖，独立 `np0()` 模块仅依赖 NumPy。

@@ -1,5 +1,6 @@
 {
   "NP0": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，待核心实现组替换/复核", "params": {"kind": "NP0"}},
+  "NP0_MEMBER": {"entrypoint": "algorithms.np0:solve", "owner": "NP-0 核心实现成员（feature/np0）", "params": {"rcond": 1e-15}},
   "NP1": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，待核心实现组替换/复核", "params": {"kind": "NP1"}},
   "SBL": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，EM版，待基线组复核", "params": {"kind": "SBL", "convergence_tol": 0.000001}},
   "IRLS": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，局部平滑延续版，非原作者代码", "params": {"kind": "IRLS", "p": 0.5}},
