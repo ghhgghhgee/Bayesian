@@ -2,7 +2,7 @@
 
 对应《Bayesian Compressive Sensing Using Normal Product Priors》，Zhou Zhou、Kaihui Liu、Jun Fang，IEEE SPL 22(5), 2015，DOI 10.1109/LSP.2014.2364255。
 
-此目录包含组长的数据生成、指标计算、算法调度、独立进程复跑比对、结果汇总和打包工具。NP0/NP1/SBL/IRLS/FOCUSS 为组长参考实现，BP 是 SciPy HiGHS 的等式约束线性规划封装。本分支另接入 NP0_MEMBER 成员实现；成员代码的运行与独立交叉复核仍待完成。详见 `docs/交付与验收.md`。
+此目录包含组长的数据生成、指标计算、算法调度、独立进程复跑比对、结果汇总和打包工具。NP0/NP1/SBL/IRLS/FOCUSS 为组长参考实现，BP 是 SciPy HiGHS 的等式约束线性规划封装。本分支另接入 NP0_MEMBER 成员实现，已通过本机测试及代表工况复跑，跨成员独立环境复核仍待完成。详见 `docs/交付与验收.md`。
 
 ## 运行
 
@@ -72,5 +72,9 @@ python main.py package --out dist/leader_submission.zip
 python main.py run --config configs/np0_smoke.json --out results/np0_member_a
 ```
 
-此配置已提供，尚未执行。成员实现默认 `rcond=1e-15`，保留原有计算方式；
+已运行小规模配置和 `configs/np0_validation.json`（3 个工况各 300 次），
+两次独立进程复跑均通过；全部 21 项测试通过。成员实现默认 `rcond=1e-15`，保留原有计算方式；
 组长参考值为 `1e-12`。统一框架使用仓库锁定依赖，独立 `np0()` 模块仅依赖 NumPy。
+
+完整命令、统计与证据见 [NP-0 测试与接入验证记录](paper-workspace/submission/artifact-repro-checklist.md)。
+代表工况验证不等于完成论文 Fig.3 全扫描。

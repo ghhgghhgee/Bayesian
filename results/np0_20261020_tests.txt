@@ -34,7 +34,6 @@ test_standalone_import_does_not_import_framework_or_scipy (test_np0.NP0Tests.tes
 test_zero_measurements_converge_without_zero_division (test_np0.NP0Tests.test_zero_measurements_converge_without_zero_division) ... ok
 
 ----------------------------------------------------------------------
-Ran 21 tests in 5.264s
+Ran 21 tests in 5.444s
 
 OK
-

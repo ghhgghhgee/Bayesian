@@ -1,0 +1,102 @@
+{
+  "config": {
+    "n": 100,
+    "seed": 20261019,
+    "trials": 5,
+    "amplitudes": "normal",
+    "max_iter": 300,
+    "tol": 0.001,
+    "success_threshold": 0.001,
+    "cases": [
+      [
+        10,
+        3
+      ],
+      [
+        30,
+        3
+      ],
+      [
+        30,
+        15
+      ]
+    ],
+    "algorithms": [
+      "NP0",
+      "NP0_MEMBER"
+    ]
+  },
+  "algorithms": {
+    "NP0": {
+      "entrypoint": "bcs.algorithms:solve",
+      "owner": "组长参考实现，待核心实现组替换/复核",
+      "params": {
+        "kind": "NP0"
+      },
+      "source_file": "D:\\研一上\\贝叶斯与随机矩阵\\Bayes_project\\Bayesian\\bcs\\algorithms.py",
+      "sha256": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5"
+    },
+    "NP0_MEMBER": {
+      "entrypoint": "algorithms.np0:solve",
+      "owner": "NP-0 核心实现成员（feature/np0）",
+      "params": {
+        "rcond": 1e-15
+      },
+      "source_file": "D:\\研一上\\贝叶斯与随机矩阵\\Bayes_project\\Bayesian\\algorithms\\np0.py",
+      "sha256": "4783b2ee8d62cdfb4218deb3fd2a28fe199894894570ffd0cec92adf304cac6b"
+    }
+  },
+  "source_hashes": {
+    "main.py": "326906092bc62aa281717e597ad0cfa97679de9eb646b1208e8d4cddfbd884dd",
+    "NP1.py": "c080e68e10b5c1c7f76d8d1ac915e7071ab039501cc9e81b0f01af4db99859ae",
+    "algorithms/np0.py": "4783b2ee8d62cdfb4218deb3fd2a28fe199894894570ffd0cec92adf304cac6b",
+    "algorithms/__init__.py": "92aadf96c676990284b23bbaf7a456acc7b8decfea7f888e9d50a03ff4a136db",
+    "bcs/algorithms.py": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5",
+    "bcs/data.py": "bcfc46140357b7c83b9815b3fd2ea1604d8262a181096fd0f3668801957f80ea",
+    "bcs/metrics.py": "5f26be5b5c90e5e788aebc6754220e45bb1b11759028d007a48c9f014837b904",
+    "bcs/__init__.py": "66f4f577ea750e9d152525a5248e00687f0b3aaf9a75d882eaa7547f5ad55c02",
+    "tests/test_cli.py": "dc07112ebfeaf74377ca83056525390498b5195025c8ef42288fc249435549e8",
+    "tests/test_framework.py": "3ed8fb5276a21d566c80408792dc9b624a91b70d09a7ef595cd70964d3eb9d48",
+    "tests/test_np0.py": "ee29e731c9eb2e5d01e8bf9535afcb1d65af51263d294b486aacf92472be23da",
+    "algorithms.json": "67962aec5d2e3372cc684c9abfc366ce0d428585be697394215770991d5ceaa1",
+    "configs/np0_smoke.json": "34d3899f5d0911230a0b4e8057fc8314ce7826e8b79771fc790f262fe08633c0",
+    "configs/np0_validation.json": "546d8f959740b6cfe105c7bc586d1db69def557d1b7a8c8785dd9665f32a65ed",
+    "configs/paper.json": "f5c95254524e49a564706e6c7330e09db2275bfb8ca0cbe7450421a2412fa73a",
+    "configs/smoke.json": "dbec1cedf34012ef9700c55d75686577b71b2b33c921eae538bce99e5c127c53",
+    "configs/validation.json": "8b57df7e9738ba411ed5f77d3537ba7887045e887a15c4ef3fae571fac00526d",
+    "requirements.txt": "956cb8778f55502f0a2172c13d253f92884db6ec6b09d28fc0bb0283293eeb27",
+    "README.md": "c1276305a6efca1819911d55a259c7c80267f22e41718483b393c3d996b9d1b7",
+    "论文2_分工方案.md": "751948c7e824365cb65c197fa8788a3c0eec61a06547f14fcd67d4e6946bcc19",
+    "论文2_翻译_Normal_Product_Priors.md": "b498bfdbff410c3d2099d702446c1e30a438bd91a90c6c66a3ccf3bb63f1797a",
+    "docs/Git协作.md": "5fc4cf77452319f3e41ed05130996a8e37b46a6e754df5ef1d0226babb58d391",
+    "docs/np0.md": "3f3d20adef54bc06a805a282915c9d7d9f078b2161de057855c069d9349a3760",
+    "docs/交付与验收.md": "2b071015a82bdce51712a68e4eb9faf1a9cc8a470e68eb9e699cbd7952f3c3ac",
+    "docs/算法接口.md": "af798bd5a7310a345d89e78839d0ea6d6b598d39373400641486d11aa495541a",
+    "docs/组长任务执行摘要.md": "51c4116386f5f59ccb2d107850d5fcfb459096982f75aecbb0c16b7a4a7a1deb",
+    "docs/论文实验口径.md": "65779d19c79df67903f19529494e83e0ec7a188483bc2aeeba133545379db6ed",
+    "reproduce.ps1": "7583a2a34d6ec39baa8a0f4d20f4e0c624f3bf5e775746ee4d2a3f6062636829"
+  },
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "D:\\研一上\\贝叶斯与随机矩阵\\Bayes_project\\Bayesian\\.venv\\Scripts\\python.exe",
+  "numpy": "2.2.4",
+  "scipy": "1.15.2",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_utc": "2026-10-20T08:39:52Z",
+  "git_commit": "0cf3287b58afcf24573083bdec69acef7a3e9943",
+  "git_status": "",
+  "dataset_sha256": "26ec01b05c0c5dcf165b0917411a04122f3b4252c86220bf02043a57f7621036",
+  "dataset_file": "data\\65a0851ed2896ef4.npz",
+  "thread_limits": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "complete": true,
+  "errors": 0,
+  "outputs": {
+    "estimates.npz": "41e879768859651e80b8fc33580a21d6c411edf059e82fbc6ebeb37c1a5eeb17",
+    "histories.npz": "fb11c47629a8be610358124f2146aaa02436d8665a06a7ec0620bd9c3ca960b2",
+    "summary.csv": "b4dfd3d9b0562d3da327e21552c76f19c93eeedd1945ac0b6b9e0e6f3d31ff5d",
+    "trials.csv": "5e23306d2de4c43de48d4274f22af5a572647c817b04ec3e7b89a0c83868ae20"
+  }
+}
