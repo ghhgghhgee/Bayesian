@@ -1,0 +1,93 @@
+# NP1 成员模块接入说明
+
+对应组长仓库 `ghhgghhgee/Bayesian`，已核对的 main 提交为 `7d5bc050cfdb08bbe35b0de3c1a4fb733eefc522`（2026-10-20）。作者姓名/编号请在 `algorithms.json` 的 `NP1_MEMBER.owner` 中填写。
+
+## 上传文件与位置
+
+| 仓库相对路径 | 操作 | 用途 |
+|---|---|---|
+| `NP1.py` | 覆盖已有同名文件 | 原 NP-1 实现及组长接口适配入口 |
+| `algorithms.json` | 更新；仅增加 `NP1_MEMBER` 条目 | 纳入注册表，保留全部原有条目 |
+| `configs/np1_member.json` | 新增 | 成员 NP1 与参考 NP1 使用同一批数据的验收配置 |
+| `tests/test_np1_member.py` | 新增 | 10 项接口与适配测试 |
+| `docs/NP1接入说明.md` | 新增 | 本说明 |
+
+运行需要前 3 个文件；建议完整提交上述 5 个文件。文件名 **`NP1.py` 必须大写**，与 `NP1:solve` 保持一致。Linux 区分大小写，不要另上传小写副本。
+
+无需上传原独立项目的 `README.md`、`requirements.txt`、`demo_np1.py`、`validate_np1.py`、旧结果目录或论文 PDF。沿用组长的主程序、依赖与数据生成器。
+
+如果团队已经改动 `algorithms.json`，请保留其新增内容，在最新文件中合并以下登记，避免覆盖其他人的算法：
+
+```json
+"NP1_MEMBER": {
+  "entrypoint": "NP1:solve",
+  "owner": "NP1核心实现组成员（姓名/编号待填写）",
+  "params": {"rcond": 1e-12, "variance_floor": 1e-30}
+}
+```
+
+原 `NP1` 条目仍指向 `bcs.algorithms:solve`，用于参考对照。只上传模块但不注册、或只运行原 `configs/smoke.json`，均不会调用成员实现。成员验证应使用新配置。
+
+## 入口与返回结果
+
+```python
+from NP1 import solve
+result = solve(A, y, seed=0, max_iter=300, tol=1e-3)
+```
+
+`solve` 返回真实的 `bcs.algorithms.Result`：
+
+- `x`：长度为 N 的最终估计。
+- `history`：每个已完成迭代的估计列表，转数组后形状为 `(iterations,N)`；不含初始值，末行与 `x` 精确相等。
+- `times`：每轮核心迭代结束的累计秒数，非负、单调不减。组长 `trials.csv` 的 `seconds` 则包含整个调用和适配开销。
+- `converged`：相邻估计的相对变化是否达到 `tol`。
+- `status`：`converged` 或 `max_iter`。
+
+`seed` 按框架协议接收；算法采用确定性的全 1 初始化，不使用随机数、不更改全局随机状态。真值只由组长评估器使用，不传入算法。不修改输入 A/y。
+
+独立入口 `np1(A,y)`、`NP1(A,y)` 和 `solve_np1(A,y,...)` 仍保留；前两者仅返回数组。组长必须注册 **`NP1:solve`**，这些旧入口的返回类型不符合实验主程序协议。
+
+## 算法与数值约定
+
+核心对应 Zhou、Liu、Fang，*Bayesian Compressive Sensing Using Normal Product Priors*，IEEE SPL 2015，Algorithm 2 与式 (10)–(15)。每轮依次更新 a 的均值和协方差对角线、b 的均值和协方差对角线，得到 `x=a*b`，再更新两侧先验方差为完整后验二阶矩 `mean**2 + variance`。`alpha=beta=0`，不省略后验方差项。
+
+Algorithm 2 明示 a=b=1，但遗漏初始精度；实现沿用单位尺度，两侧初始精度均设为 1。伪逆通过薄 SVD 计算，不进行支持集剪枝或恢复后去偏。该模块适用于实数无噪声模型。
+
+| 参数 | 框架入口 `solve` | 原独立入口 `solve_np1` |
+|---|---:|---:|
+| `max_iter` | 300 | 300 |
+| `tol` | `1e-3` | `1e-3` |
+| `rcond` | `1e-12` | `eps(float64) * max(A.shape)` |
+| `variance_floor` | `1e-30` | `1e-300` |
+
+框架入口的数值阈值与组长参考实现对齐，原独立接口默认值保持不变。矩阵乘法顺序不同，不要求整个轨迹逐位相同。本模块停止分母使用上一轮估计的真实范数；分母为零时，无变化定义为 0，否则为无穷。组长参考实现用 `max(norm,1e-30)`，因此极小量级输入可能有不同停止行为。
+
+`converged=True` 表示停止条件满足，不保证恢复真实信号。对于不一致观测，伪逆也可能返回投影解；本模块不进行噪声建模。论文成功判据由框架外部计算，不能用停止状态代替。
+
+## 运行与复跑
+
+在仓库根目录、组长环境中执行：
+
+```powershell
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+python main.py run --config configs/np1_member.json --out results/np1_member_a
+python main.py run --config configs/np1_member.json --out results/np1_member_b
+python main.py compare results/np1_member_a results/np1_member_b --report results/np1_member_reproducibility.json
+```
+
+结果目录必须是新的空目录；重跑时更换目录名。两次 run 之间不要修改源码、配置或说明，因为 compare 会核对文件哈希。填写 owner 也应在两次实验开始之前完成。
+
+配置保持组长 n=100、seed=20261019、标准正态 A 与非零幅度、不归一化列、无噪声设置，M/K 为 `(10,3)`、`(30,3)`、`(30,15)`，每个工况 5 次，分别调用参考 `NP1` 和成员 `NP1_MEMBER`，共 30 次调用。这是接口验收，不代表论文完整 300 次扫描。
+
+新增 10 项测试覆盖实际注册入口、Result 类型、历史与计时契约、参数转发、随机状态、停止状态、输入保护、历史快照、稀疏样例和配置。原 15 项完整公式与边界测试在成员独立项目中保留。
+
+组长依赖锁定为 NumPy 2.2.4、SciPy 1.15.2、Matplotlib 3.10.0；适配不增加依赖。两个独立进程 compare 验证可重复性，不能替代另一位组员的独立数学复核与交叉验收。
+
+## 给实验和绘图组
+
+正式配置也需加入 `NP1_MEMBER`。`histories.npz` 中键示例为 `m30_k3_t0_NP1_MEMBER`，累计时间键为同名加 `_times`。
+
+当前 `main.py plot` 的成功率图会读取配置中的全部算法；收敛图则硬编码遍历 `NP1/SBL/IRLS`，**不会显示 `NP1_MEMBER` 收敛曲线**。绘图组需加入该名字，或从保存的轨迹另行绘制。本次未修改公共 `main.py`。
+
+组长 README 当前含历史合并冲突标记；它不参与运行，本次未覆盖，可以单独由组长清理。
