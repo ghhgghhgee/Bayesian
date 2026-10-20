@@ -8,6 +8,8 @@
 
 建议 Python 3.11 或 3.12。系统自带的旧 Anaconda Python 3.8 不适用锁定依赖。
 
+数据由 `bcs/data.py` 按配置和固定种子生成，无需下载外部数据（synthetic dataset; no external data download）。`python main.py generate --config configs/np0_smoke.json` 会在忽略目录 `data/` 保存共享数据缓存及生成参数。
+
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements.txt

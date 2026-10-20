@@ -50,7 +50,7 @@ class CLITests(unittest.TestCase):
             run = subprocess.run([sys.executable, str(ROOT/'main.py'), 'compare', str(p/'a'), str(p/'b'),
                                   '--report', str(p/'compare.json')], cwd=ROOT, capture_output=True)
             self.assertNotEqual(run.returncode, 0)
-            report = json.loads((p/'compare.json').read_text())
+            report = json.loads((p/'compare.json').read_text(encoding='utf-8'))
             self.assertFalse(report['checks']['estimates.npz'])
 
 
