@@ -1,0 +1,39 @@
+test_algorithm_error_is_not_hidden (test_cli.CLITests.test_algorithm_error_is_not_hidden) ... ok
+test_modified_estimate_fails_comparison (test_cli.CLITests.test_modified_estimate_fails_comparison) ... ok
+test_all_solvers_recover_identity_case (test_framework.FrameworkTests.test_all_solvers_recover_identity_case) ... ok
+test_bp_exact_equality_and_l1_optimum (test_framework.FrameworkTests.test_bp_exact_equality_and_l1_optimum) ... ok
+test_dataset_is_repeatable_and_noiseless (test_framework.FrameworkTests.test_dataset_is_repeatable_and_noiseless) ... ok
+test_metrics_definition (test_framework.FrameworkTests.test_metrics_definition) ... ok
+test_posterior_matches_independent_conditional_formula (test_framework.FrameworkTests.test_posterior_matches_independent_conditional_formula) ... ok
+test_sbl_does_not_stop_at_initial_minimum_norm_solution (test_framework.FrameworkTests.test_sbl_does_not_stop_at_initial_minimum_norm_solution) ... ok
+test_adapter_records_real_history_and_matches_standalone (test_np0.NP0Tests.test_adapter_records_real_history_and_matches_standalone) ... ok
+test_adapter_rejects_invalid_rcond_and_unknown_parameters (test_np0.NP0Tests.test_adapter_rejects_invalid_rcond_and_unknown_parameters) ... ok
+test_inputs_and_global_random_state_are_unchanged (test_np0.NP0Tests.test_inputs_and_global_random_state_are_unchanged) ... ok
+test_invalid_data_is_rejected (test_np0.NP0Tests.test_invalid_data_is_rejected) ... ok
+test_invalid_stopping_parameters_are_rejected (test_np0.NP0Tests.test_invalid_stopping_parameters_are_rejected) ... ok
+test_iteration_limit_does_not_claim_convergence (test_np0.NP0Tests.test_iteration_limit_does_not_claim_convergence) ... ok
+test_matches_independent_dense_diagonal_iteration (test_np0.NP0Tests.test_matches_independent_dense_diagonal_iteration) ... ok
+test_plot_uses_member_history_for_both_convergence_axes (test_np0.NP0Tests.test_plot_uses_member_history_for_both_convergence_axes) ... ok
+test_registered_member_runs_through_actual_cli (test_np0.NP0Tests.test_registered_member_runs_through_actual_cli) ... ok
+test_row_and_column_measurement_vectors (test_np0.NP0Tests.test_row_and_column_measurement_vectors) ... ok
+test_standalone_default_and_diagnostics (test_np0.NP0Tests.test_standalone_default_and_diagnostics) ... ok
+test_standalone_import_does_not_import_framework_or_scipy (test_np0.NP0Tests.test_standalone_import_does_not_import_framework_or_scipy) ... ok
+test_zero_measurements_converge_without_zero_division (test_np0.NP0Tests.test_zero_measurements_converge_without_zero_division) ... ok
+test_acceptance_config_compares_member_with_original_reference (test_np1_member.NP1MemberTests.test_acceptance_config_compares_member_with_original_reference) ... ok
+test_default_adapter_preserves_every_standalone_iterate (test_np1_member.NP1MemberTests.test_default_adapter_preserves_every_standalone_iterate) ... ok
+test_history_snapshots_do_not_alias_final_estimate_or_each_other (test_np1_member.NP1MemberTests.test_history_snapshots_do_not_alias_final_estimate_or_each_other) ... ok
+test_inputs_are_not_modified_and_read_only_arrays_work (test_np1_member.NP1MemberTests.test_inputs_are_not_modified_and_read_only_arrays_work) ... ok
+test_iteration_limit_is_reported_without_false_convergence (test_np1_member.NP1MemberTests.test_iteration_limit_is_reported_without_false_convergence) ... ok
+test_known_noiseless_sparse_case_recovers_using_framework_metric (test_np1_member.NP1MemberTests.test_known_noiseless_sparse_case_recovers_using_framework_metric) ... ok
+test_numerical_parameter_overrides_reach_core (test_np1_member.NP1MemberTests.test_numerical_parameter_overrides_reach_core) ... ok
+test_registry_imports_member_and_keeps_reference_algorithms (test_np1_member.NP1MemberTests.test_registry_imports_member_and_keeps_reference_algorithms) ... ok
+test_result_satisfies_framework_history_and_timing_contract (test_np1_member.NP1MemberTests.test_result_satisfies_framework_history_and_timing_contract) ... ok
+test_seed_does_not_change_estimates_or_global_random_state (test_np1_member.NP1MemberTests.test_seed_does_not_change_estimates_or_global_random_state) ... ok
+test_checked_in_configs_only_reference_registered_algorithms (test_registry.RegistryTests.test_checked_in_configs_only_reference_registered_algorithms) ... ok
+test_every_registered_entry_runs_through_actual_cli (test_registry.RegistryTests.test_every_registered_entry_runs_through_actual_cli) ... ok
+test_registry_is_strict_json_with_unique_callable_entries (test_registry.RegistryTests.test_registry_is_strict_json_with_unique_callable_entries) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 11.609s
+
+OK

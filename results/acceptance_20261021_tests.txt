@@ -1,0 +1,93 @@
+test_algorithm_error_is_not_hidden (test_cli.CLITests.test_algorithm_error_is_not_hidden) ... ok
+test_modified_estimate_fails_comparison (test_cli.CLITests.test_modified_estimate_fails_comparison) ... ERROR
+test_all_solvers_recover_identity_case (test_framework.FrameworkTests.test_all_solvers_recover_identity_case) ... ok
+test_bp_exact_equality_and_l1_optimum (test_framework.FrameworkTests.test_bp_exact_equality_and_l1_optimum) ... ok
+test_dataset_is_repeatable_and_noiseless (test_framework.FrameworkTests.test_dataset_is_repeatable_and_noiseless) ... ok
+test_metrics_definition (test_framework.FrameworkTests.test_metrics_definition) ... ok
+test_posterior_matches_independent_conditional_formula (test_framework.FrameworkTests.test_posterior_matches_independent_conditional_formula) ... ok
+test_sbl_does_not_stop_at_initial_minimum_norm_solution (test_framework.FrameworkTests.test_sbl_does_not_stop_at_initial_minimum_norm_solution) ... ok
+test_adapter_records_real_history_and_matches_standalone (test_np0.NP0Tests.test_adapter_records_real_history_and_matches_standalone) ... ok
+test_adapter_rejects_invalid_rcond_and_unknown_parameters (test_np0.NP0Tests.test_adapter_rejects_invalid_rcond_and_unknown_parameters) ... ok
+test_inputs_and_global_random_state_are_unchanged (test_np0.NP0Tests.test_inputs_and_global_random_state_are_unchanged) ... ok
+test_invalid_data_is_rejected (test_np0.NP0Tests.test_invalid_data_is_rejected) ... ok
+test_invalid_stopping_parameters_are_rejected (test_np0.NP0Tests.test_invalid_stopping_parameters_are_rejected) ... ok
+test_iteration_limit_does_not_claim_convergence (test_np0.NP0Tests.test_iteration_limit_does_not_claim_convergence) ... ok
+test_matches_independent_dense_diagonal_iteration (test_np0.NP0Tests.test_matches_independent_dense_diagonal_iteration) ... ok
+test_plot_uses_member_history_for_both_convergence_axes (test_np0.NP0Tests.test_plot_uses_member_history_for_both_convergence_axes) ... ok
+test_registered_member_runs_through_actual_cli (test_np0.NP0Tests.test_registered_member_runs_through_actual_cli) ... FAIL
+test_row_and_column_measurement_vectors (test_np0.NP0Tests.test_row_and_column_measurement_vectors) ... ok
+test_standalone_default_and_diagnostics (test_np0.NP0Tests.test_standalone_default_and_diagnostics) ... ok
+test_standalone_import_does_not_import_framework_or_scipy (test_np0.NP0Tests.test_standalone_import_does_not_import_framework_or_scipy) ... ok
+test_zero_measurements_converge_without_zero_division (test_np0.NP0Tests.test_zero_measurements_converge_without_zero_division) ... ok
+test_acceptance_config_compares_member_with_original_reference (test_np1_member.NP1MemberTests.test_acceptance_config_compares_member_with_original_reference) ... ok
+test_default_adapter_preserves_every_standalone_iterate (test_np1_member.NP1MemberTests.test_default_adapter_preserves_every_standalone_iterate) ... ok
+test_history_snapshots_do_not_alias_final_estimate_or_each_other (test_np1_member.NP1MemberTests.test_history_snapshots_do_not_alias_final_estimate_or_each_other) ... ok
+test_inputs_are_not_modified_and_read_only_arrays_work (test_np1_member.NP1MemberTests.test_inputs_are_not_modified_and_read_only_arrays_work) ... ok
+test_iteration_limit_is_reported_without_false_convergence (test_np1_member.NP1MemberTests.test_iteration_limit_is_reported_without_false_convergence) ... ok
+test_known_noiseless_sparse_case_recovers_using_framework_metric (test_np1_member.NP1MemberTests.test_known_noiseless_sparse_case_recovers_using_framework_metric) ... ok
+test_numerical_parameter_overrides_reach_core (test_np1_member.NP1MemberTests.test_numerical_parameter_overrides_reach_core) ... ok
+test_registry_imports_member_and_keeps_reference_algorithms (test_np1_member.NP1MemberTests.test_registry_imports_member_and_keeps_reference_algorithms) ... ERROR
+test_result_satisfies_framework_history_and_timing_contract (test_np1_member.NP1MemberTests.test_result_satisfies_framework_history_and_timing_contract) ... ok
+test_seed_does_not_change_estimates_or_global_random_state (test_np1_member.NP1MemberTests.test_seed_does_not_change_estimates_or_global_random_state) ... ok
+
+======================================================================
+ERROR: test_modified_estimate_fails_comparison (test_cli.CLITests.test_modified_estimate_fails_comparison)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\��Ҷ˹\tests\test_cli.py", line 44, in test_modified_estimate_fails_comparison
+    subprocess.run([sys.executable, str(ROOT/'main.py'), 'run', '--config', str(p/'config.json'),
+  File "C:\Users\ghhg\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\ghhg\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\��Ҷ˹\\main.py', 'run', '--config', 'D:\\��Ҷ˹\\tmp\\tmp4qfnm4sg\\config.json', '--out', 'D:\\��Ҷ˹\\tmp\\tmp4qfnm4sg\\a', '--data-dir', 'D:\\��Ҷ˹\\tmp\\tmp4qfnm4sg\\data']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_registry_imports_member_and_keeps_reference_algorithms (test_np1_member.NP1MemberTests.test_registry_imports_member_and_keeps_reference_algorithms)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\��Ҷ˹\tests\test_np1_member.py", line 30, in test_registry_imports_member_and_keeps_reference_algorithms
+    registry = json.loads((ROOT / "algorithms.json").read_text(encoding="utf-8-sig"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ghhg\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ghhg\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\json\decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ghhg\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\json\decoder.py", line 354, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 9 column 3 (char 819)
+
+======================================================================
+FAIL: test_registered_member_runs_through_actual_cli (test_np0.NP0Tests.test_registered_member_runs_through_actual_cli)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\��Ҷ˹\tests\test_np0.py", line 303, in test_registered_member_runs_through_actual_cli
+    self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "D:\��Ҷ˹\main.py", line 283, in <module>
+    main()
+  File "D:\��Ҷ˹\main.py", line 273, in main
+    run(args)
+  File "D:\��Ҷ˹\main.py", line 72, in run
+    registry = read_json(args.registry)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\��Ҷ˹\main.py", line 27, in read_json
+    return json.loads(Path(path).read_text(encoding="utf-8-sig"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ghhg\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ghhg\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\json\decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ghhg\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\json\decoder.py", line 354, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 9 column 3 (char 819)
+
+
+----------------------------------------------------------------------
+Ran 31 tests in 7.337s
+
+FAILED (failures=1, errors=2)
