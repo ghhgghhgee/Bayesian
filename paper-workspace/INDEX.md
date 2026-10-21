@@ -1,4 +1,6 @@
 # 项目验证记录
 
+- [2026-10-21：组长验证修复后主分支并复跑成员 NP1/NP0](../docs/组长前三项验收_20261021.md)
+
 - [2026-10-20：NP-0 测试与框架接入验证](submission/artifact-repro-checklist.md)
 - [2026-10-21：注册表 JSON 修复与全部算法接入验证](../docs/registry_fix_validation.md)
