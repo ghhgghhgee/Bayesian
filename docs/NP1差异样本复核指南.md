@@ -14,6 +14,8 @@ python scripts/review_np1_cases.py --out results/np1_review_mine
 
 本机已有输出在 `results/np1_review_20261022/`。本机还用 `--historical-run results/leader_20261021_np1_a` 核对了新运行与昨日保存的估计；普通克隆不含历史大文件，省略该参数即可。
 
+已经验证省略历史参数的独立运行：全部导出输入、估计和轨迹与本机案例包一致；另独立核对 y=A x、MSE、成功判定、末步估计及输出哈希。验证结果保存在 results/preparation_20261022_checks.json。
+
 ## 看哪些文件
 
 | 文件 | 内容 |

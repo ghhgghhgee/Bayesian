@@ -1,0 +1,166 @@
+{
+  "config": {
+    "n": 100,
+    "seed": 20261019,
+    "trials": 5,
+    "amplitudes": "normal",
+    "max_iter": 300,
+    "tol": 0.001,
+    "success_threshold": 0.001,
+    "cases": [
+      [
+        10,
+        3
+      ],
+      [
+        30,
+        3
+      ],
+      [
+        30,
+        15
+      ]
+    ],
+    "algorithms": [
+      "NP0_MEMBER",
+      "NP1_MEMBER",
+      "SBL",
+      "IRLS",
+      "FOCUSS",
+      "BP"
+    ],
+    "stage": "candidate_pending_baseline_owner_and_np1_review",
+    "notes": "Integration smoke only; not a completed paper scan."
+  },
+  "algorithms": {
+    "NP0_MEMBER": {
+      "entrypoint": "algorithms.np0:solve",
+      "owner": "NP-0 核心实现成员（feature/np0）",
+      "params": {
+        "rcond": 1e-15
+      },
+      "source_file": "D:\\贝叶斯\\algorithms\\np0.py",
+      "sha256": "4783b2ee8d62cdfb4218deb3fd2a28fe199894894570ffd0cec92adf304cac6b"
+    },
+    "NP1_MEMBER": {
+      "entrypoint": "NP1:solve",
+      "owner": "NP1核心实现组成员（陈奥力）",
+      "params": {
+        "rcond": 1e-12,
+        "variance_floor": 1e-30
+      },
+      "source_file": "D:\\贝叶斯\\NP1.py",
+      "sha256": "1013b0f374e6e7383f3205c49be0fa2066f97e0aca7f9510f873d8d2938a5c69"
+    },
+    "SBL": {
+      "entrypoint": "bcs.algorithms:solve",
+      "owner": "组长参考实现，EM版，待基线组复核",
+      "params": {
+        "kind": "SBL",
+        "convergence_tol": 1e-06
+      },
+      "source_file": "D:\\贝叶斯\\bcs\\algorithms.py",
+      "sha256": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5"
+    },
+    "IRLS": {
+      "entrypoint": "bcs.algorithms:solve",
+      "owner": "组长参考实现，局部平滑延续版，非原作者代码",
+      "params": {
+        "kind": "IRLS",
+        "p": 0.5
+      },
+      "source_file": "D:\\贝叶斯\\bcs\\algorithms.py",
+      "sha256": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5"
+    },
+    "FOCUSS": {
+      "entrypoint": "bcs.algorithms:solve",
+      "owner": "组长参考实现，额外基线",
+      "params": {
+        "kind": "FOCUSS",
+        "p": 0.0
+      },
+      "source_file": "D:\\贝叶斯\\bcs\\algorithms.py",
+      "sha256": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5"
+    },
+    "BP": {
+      "entrypoint": "bcs.algorithms:solve",
+      "owner": "SciPy HiGHS 线性规划，组长封装",
+      "params": {
+        "kind": "BP"
+      },
+      "source_file": "D:\\贝叶斯\\bcs\\algorithms.py",
+      "sha256": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5"
+    }
+  },
+  "source_hashes": {
+    "main.py": "326906092bc62aa281717e597ad0cfa97679de9eb646b1208e8d4cddfbd884dd",
+    "NP1.py": "1013b0f374e6e7383f3205c49be0fa2066f97e0aca7f9510f873d8d2938a5c69",
+    "algorithms/np0.py": "4783b2ee8d62cdfb4218deb3fd2a28fe199894894570ffd0cec92adf304cac6b",
+    "algorithms/__init__.py": "92aadf96c676990284b23bbaf7a456acc7b8decfea7f888e9d50a03ff4a136db",
+    "bcs/algorithms.py": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5",
+    "bcs/data.py": "bcfc46140357b7c83b9815b3fd2ea1604d8262a181096fd0f3668801957f80ea",
+    "bcs/metrics.py": "5f26be5b5c90e5e788aebc6754220e45bb1b11759028d007a48c9f014837b904",
+    "bcs/__init__.py": "66f4f577ea750e9d152525a5248e00687f0b3aaf9a75d882eaa7547f5ad55c02",
+    "scripts/audit_np0_outputs.py": "b6292f154980765d0958b05274416bad9f01c4a73936b7f61a06daadf5a1504b",
+    "scripts/review_np1_cases.py": "98498963be81e2d3ccd8a28d65db4f247781ae57a9ddcc6fe6d3d5ea744672c4",
+    "tests/test_cli.py": "dc07112ebfeaf74377ca83056525390498b5195025c8ef42288fc249435549e8",
+    "tests/test_framework.py": "3ed8fb5276a21d566c80408792dc9b624a91b70d09a7ef595cd70964d3eb9d48",
+    "tests/test_np0.py": "ee29e731c9eb2e5d01e8bf9535afcb1d65af51263d294b486aacf92472be23da",
+    "tests/test_np1_member.py": "69d8f07b39e52c76766d93b6f1cf321474655c844a429c94499e637acf92bfb1",
+    "tests/test_registry.py": "039034210820db01ffb91ab785a7f012043c7a87d9157ba107deab8aec5ce3f7",
+    "algorithms.json": "3cd78834222e5c92d19467161b99dfcb173874e514dec77116e97e8fde6d383a",
+    "configs/all_algorithms_smoke.json": "925da9fd0d119b27818d13883c7f0584d292d130a1c59aeef3d11e995d7044f6",
+    "configs/np0_smoke.json": "34d3899f5d0911230a0b4e8057fc8314ce7826e8b79771fc790f262fe08633c0",
+    "configs/np0_validation.json": "546d8f959740b6cfe105c7bc586d1db69def557d1b7a8c8785dd9665f32a65ed",
+    "configs/np1_member.json": "0d50e4e01ebf7c5e912dd4635a00c0043f828cfca5b255c63b24c737ca1ca26b",
+    "configs/np1_validation.json": "3f16b3ede38240aab84fd5e7e589f131a62afc5dec15d95be14d4be6a96968a6",
+    "configs/paper.json": "e5930f08e0a17174f48ff2414cf4d1b6442b245677b0d48034e92922e5e20cf1",
+    "configs/paper_members.json": "42b94db88a5a7fd89e065998123cea30c2034f444e7d4eee1c8696ca312e79bb",
+    "configs/paper_members_smoke.json": "570928832f84fa3986c0a343c9b1915450b45f5636b6342b09afebd75fdb6571",
+    "configs/smoke.json": "dbec1cedf34012ef9700c55d75686577b71b2b33c921eae538bce99e5c127c53",
+    "configs/validation.json": "8b57df7e9738ba411ed5f77d3537ba7887045e887a15c4ef3fae571fac00526d",
+    "requirements.txt": "956cb8778f55502f0a2172c13d253f92884db6ec6b09d28fc0bb0283293eeb27",
+    "README.md": "be436fcb35f7a70e5e7735dafc18e843ae52b46606cb3d0a91f2a3f46ebd3382",
+    "论文2_分工方案.md": "c6dedc80d0b998ec6e26dbbd3af36ac69cb6209f90c962384ebd9c384bf0ea7a",
+    "论文2_翻译_Normal_Product_Priors.md": "b498bfdbff410c3d2099d702446c1e30a438bd91a90c6c66a3ccf3bb63f1797a",
+    "docs/Git协作.md": "5fc4cf77452319f3e41ed05130996a8e37b46a6e754df5ef1d0226babb58d391",
+    "docs/np0.md": "39cb4cc02b79c9e9c41f9f3dc3ecc4057f53c0b79ef2aa96f21e42402fff0f6d",
+    "docs/NP1差异样本复核指南.md": "cb534084d522ef3ad7e6e50d6656c03e29d7d097c97102f5c3269dcfb23a93ae",
+    "docs/registry_fix_validation.md": "f6416a34b209cad6134ee7e19de3c14941c79772c374ae4038278a9247181de2",
+    "docs/交付与验收.md": "7ff6d99faf782f178fed6c71f83345d2fb3d8c50cbc8003cd82dff045d8eda79",
+    "docs/正式实验与成员交付清单.md": "92dc5d8910ede9a85121d747e89fe948577d2a4359211ddc8ba89dec60a129da",
+    "docs/算法接口.md": "af798bd5a7310a345d89e78839d0ea6d6b598d39373400641486d11aa495541a",
+    "docs/组长任务执行摘要.md": "2668966df415632a8c965c28b57e00800a8acdc8981bb0cfa571d228b38b5f11",
+    "docs/组长前三项验收_20261021.md": "287df60fce8f08538313a955db9b3d72a5cd0dd27a56887575ad09baad5bab27",
+    "docs/论文实验口径.md": "65779d19c79df67903f19529494e83e0ec7a188483bc2aeeba133545379db6ed",
+    "paper-workspace/INDEX.md": "ad66540e5b97c9a990c6b73e5fc4ee9b9ebca68289e21d82d9838771307b7db5",
+    "paper-workspace/submission/artifact-repro-checklist.md": "517588baf2b41a73183b9576be6084b1ac3c487cfda2111a2dfb34f4ff366a18",
+    "reproduce.ps1": "7583a2a34d6ec39baa8a0f4d20f4e0c624f3bf5e775746ee4d2a3f6062636829",
+    "scripts/leader_validation.ps1": "f3c5e54ae8d329d1b9d0fb5247e5651a03c53d4b7ed4868c1763c29faabac465"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\ghhg\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "numpy": "2.2.4",
+  "scipy": "1.15.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "started_utc": "2026-10-22T14:01:39Z",
+  "git_commit": "e876e3d74b0da9972a4360829563f9cdaa09725d",
+  "git_status": "",
+  "dataset_sha256": "26ec01b05c0c5dcf165b0917411a04122f3b4252c86220bf02043a57f7621036",
+  "dataset_file": "data\\65a0851ed2896ef4.npz",
+  "thread_limits": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "complete": true,
+  "errors": 0,
+  "outputs": {
+    "estimates.npz": "c951c0eab148de2c34e374e02adc8b862546a8bc8ccb2d5e62804ee82816fb15",
+    "histories.npz": "96d67d74413d53fac7ea583dc5fa79183b9d153bc94224e3e206f21f49737a7a",
+    "summary.csv": "23239c071f801b7296446763405f21d3b3bb9713c32a53eb799aee8e8bb8c472",
+    "trials.csv": "54bbcfed3dc6b5408427b09ac8fe8143b51a40f95c163881bf7a124931c757bf",
+    "convergence.png": "095829d94f35576e813fc40eb3b88ce0d3b5d4232ca482b339eecd4fbdd9a5ea",
+    "success_rate.png": "25cff56816339a2b1349c96dbd88f545d7d22cfbb269d231876898d6824bda40"
+  }
+}
