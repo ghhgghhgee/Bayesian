@@ -2,7 +2,7 @@
 
 Implements Algorithm 2 and equations (10)--(15), with alpha = beta = 0.
 The standalone solver needs only NumPy. The ``solve`` entry point adapts to
-the team's bcs.algorithms.Result contract; see docs/NP1接入说明.md.
+the team's bcs.algorithms.Result contract; see docs/NP1数值复核_20261023.md.
 """
 
 from __future__ import annotations
@@ -76,11 +76,17 @@ def _posterior(
     left, singular, right_t = np.linalg.svd(B, full_matrices=False)
     keep = singular > rcond * singular[0]
     rank = int(np.count_nonzero(keep))
-    right = right_t[keep, :]
-    mean = scale * (right.T @ ((left[:, keep].T @ y) / singular[keep]))
-    leverage = np.sum(right * right, axis=0)
-    # An orthogonal projector has diagonal in [0,1]; clip roundoff only.
-    variance = prior_variance * np.clip(1.0 - leverage, 0.0, 1.0)
+    # Match NumPy pinv's evaluation order and the team's reference protocol.
+    # Reassociating B^+ @ y, or replacing diag(B^+ B) by sum(V**2), is
+    # algebraically equivalent but changes roundoff. NP-1's alternating
+    # updates can amplify that perturbation on difficult recovery cases.
+    reciprocal = np.zeros_like(singular)
+    np.divide(1.0, singular, out=reciprocal, where=keep)
+    inverse = right_t.T @ (reciprocal[:, None] * left.T)
+    mean = scale * (inverse @ y)
+    leverage = np.einsum("ij,ji->i", inverse, B)
+    # Clip negative posterior variances caused by roundoff, as in reference.
+    variance = prior_variance * np.maximum(1.0 - leverage, 0.0)
     return mean, variance, rank
 
 
@@ -244,3 +250,4 @@ def solve(
 NP1 = np1
 
 __all__ = ["NP1", "NP1Result", "np1", "solve", "solve_np1"]
+
