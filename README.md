@@ -78,3 +78,9 @@ python main.py run --config configs/np0_smoke.json --out results/np0_member_a
 
 完整命令、统计与证据见 [NP-0 测试与接入验证记录](paper-workspace/submission/artifact-repro-checklist.md)。
 代表工况验证不等于完成论文 Fig.3 全扫描。
+
+## 最新验收与材料归档
+
+2026-10-23：理论推导稿已交付；NP1 数值修复经组长重新验收。当前状态、证据及剩余任务见 [交付与验收](docs/交付与验收.md)。
+
+`python main.py package` 会包含 Word、PDF、PPT 交付文件及本地完整实验输出，可能较大；原论文所在 Projects、缓存和临时目录仍排除。阶段代码归档可使用 `git archive --format=zip --output=dist/team_checkpoint.zip HEAD`，只打包已提交文件，不含忽略的大型实验数据。最终全组包应在报告、PPT、正式实验齐全后生成。

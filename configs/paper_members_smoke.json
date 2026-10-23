@@ -28,6 +28,6 @@
     "FOCUSS",
     "BP"
   ],
-  "stage": "candidate_pending_baseline_owner_and_np1_review",
-  "notes": "Integration smoke only; not a completed paper scan."
+  "stage": "candidate_pending_baseline_owner",
+  "notes": "Integration smoke only; not a completed paper scan. NP1 fix independently verified on 2026-10-23; peer review between NP0/NP1 authors is not required."
 }

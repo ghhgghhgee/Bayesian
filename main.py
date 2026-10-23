@@ -242,7 +242,7 @@ def package(output):
             rel = p.relative_to(ROOT)
             if not p.is_file() or any(part in (".git", ".venv", "tmp", "dist", "__pycache__", "data", "Projects") for part in rel.parts):
                 continue
-            if p.suffix.lower() not in (".py", ".json", ".md", ".csv", ".png", ".npz", ".txt", ".ps1") and p.name not in (".gitignore", ".gitattributes"):
+            if p.suffix.lower() not in (".py", ".json", ".md", ".csv", ".png", ".npz", ".txt", ".ps1", ".doc", ".docx", ".pdf", ".ppt", ".pptx") and p.name not in (".gitignore", ".gitattributes"):
                 continue
             if p.name.startswith("paper2_"):
                 continue
