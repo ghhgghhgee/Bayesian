@@ -1,0 +1,34 @@
+test_reported_sensitive_trials_match_reference_trajectory (test_np1_numerics.NP1NumericsTests.test_reported_sensitive_trials_match_reference_trajectory) ... 
+  test_reported_sensitive_trials_match_reference_trajectory (test_np1_numerics.NP1NumericsTests.test_reported_sensitive_trials_match_reference_trajectory) (trial=52) ... FAIL
+  test_reported_sensitive_trials_match_reference_trajectory (test_np1_numerics.NP1NumericsTests.test_reported_sensitive_trials_match_reference_trajectory) (trial=135) ... FAIL
+  test_reported_sensitive_trials_match_reference_trajectory (test_np1_numerics.NP1NumericsTests.test_reported_sensitive_trials_match_reference_trajectory) (trial=161) ... FAIL
+test_zero_and_truncated_singular_values_are_safe (test_np1_numerics.NP1NumericsTests.test_zero_and_truncated_singular_values_are_safe) ... ok
+
+======================================================================
+FAIL: test_reported_sensitive_trials_match_reference_trajectory (test_np1_numerics.NP1NumericsTests.test_reported_sensitive_trials_match_reference_trajectory) (trial=52)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\��Ҷ˹\np1_fix_20261023\tests\test_np1_numerics.py", line 21, in test_reported_sensitive_trials_match_reference_trajectory
+    self.assertEqual(len(actual.history), len(expected.history))
+AssertionError: 50 != 46
+
+======================================================================
+FAIL: test_reported_sensitive_trials_match_reference_trajectory (test_np1_numerics.NP1NumericsTests.test_reported_sensitive_trials_match_reference_trajectory) (trial=135)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\��Ҷ˹\np1_fix_20261023\tests\test_np1_numerics.py", line 21, in test_reported_sensitive_trials_match_reference_trajectory
+    self.assertEqual(len(actual.history), len(expected.history))
+AssertionError: 83 != 90
+
+======================================================================
+FAIL: test_reported_sensitive_trials_match_reference_trajectory (test_np1_numerics.NP1NumericsTests.test_reported_sensitive_trials_match_reference_trajectory) (trial=161)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\��Ҷ˹\np1_fix_20261023\tests\test_np1_numerics.py", line 21, in test_reported_sensitive_trials_match_reference_trajectory
+    self.assertEqual(len(actual.history), len(expected.history))
+AssertionError: 76 != 81
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.071s
+
+FAILED (failures=3)
