@@ -91,3 +91,4 @@ python main.py compare results/np1_member_a results/np1_member_b --report result
 当前 `main.py plot` 的成功率图会读取配置中的全部算法；收敛图则硬编码遍历 `NP1/SBL/IRLS`，**不会显示 `NP1_MEMBER` 收敛曲线**。绘图组需加入该名字，或从保存的轨迹另行绘制。本次未修改公共 `main.py`。
 
 组长 README 当前含历史合并冲突标记；它不参与运行，本次未覆盖，可以单独由组长清理。
+
