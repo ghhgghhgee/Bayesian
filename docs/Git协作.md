@@ -15,3 +15,4 @@ git commit -m "feat: integrate member NP0 implementation"
 远程地址由小组确定后配置：`git remote add origin <小组仓库地址>`，再按团队权限推送。不要提交密码/token；不要改写他人历史。当前交付只维护本地版本，未替团队创建远程仓库或上传课程平台。
 
 最终打包前：核对全员验收表、完整扫描结果、报告/PPT/讲稿是否齐全，再运行 `python main.py package`。本次框架包尚不能替代这些尚未交付的材料。
+

@@ -1,0 +1,349 @@
+{
+  "passed": true,
+  "python": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+  "numpy": "2.2.4",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "script_sha256": "ca2937f90110a79dbccd1e8df9e60cc4393a92e9585fffd760fb7d6e49249e02",
+  "runs": [
+    {
+      "directory": "D:\\贝叶斯\\np1_fix_20261023\\results\\np1_fix_20261023_a",
+      "passed": true,
+      "checks": {
+        "manifest_complete_without_errors": 1,
+        "manifest_output_integrity": 4,
+        "dataset_file_integrity": 1,
+        "trial_row_count": 1,
+        "unique_trial_records": 1,
+        "complete_trial_keys": 1,
+        "estimate_keys": 1,
+        "history_keys": 1,
+        "regenerated_dataset_equal": 2700,
+        "no_algorithm_error": 1800,
+        "regenerated_data_hash_matches": 1800,
+        "algorithm_seed_matches": 1800,
+        "estimate_shape_and_finite": 1800,
+        "history_shape_and_finite": 1800,
+        "time_contract": 1800,
+        "iteration_count": 1800,
+        "final_history_equal": 1800,
+        "elapsed_time_bounds": 1800,
+        "stopping_status_consistent": 1800,
+        "trial_metric_mse": 1800,
+        "trial_metric_nmse": 1800,
+        "trial_metric_relative_error": 1800,
+        "trial_metric_paper_mse_db": 1800,
+        "trial_success_threshold": 1800,
+        "algorithms_share_data_hash": 900,
+        "summary_groups": 1,
+        "summary_trials": 6,
+        "summary_errors": 6,
+        "summary_successes": 6,
+        "summary_success_rate": 6,
+        "summary_mean_mse": 6,
+        "summary_mean_nmse": 6,
+        "summary_mean_iterations": 6,
+        "summary_median_seconds": 6
+      },
+      "failures": {},
+      "failure_examples": [],
+      "config": {
+        "n": 100,
+        "seed": 20261019,
+        "trials": 300,
+        "amplitudes": "normal",
+        "max_iter": 300,
+        "tol": 0.001,
+        "success_threshold": 0.001,
+        "cases": [
+          [
+            10,
+            3
+          ],
+          [
+            30,
+            3
+          ],
+          [
+            30,
+            15
+          ]
+        ],
+        "algorithms": [
+          "NP1",
+          "NP1_MEMBER"
+        ]
+      },
+      "independent_summary": [
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP1",
+          "trials": 300,
+          "errors": 0,
+          "successes": 225,
+          "success_rate": 0.75,
+          "mean_mse": 0.007986403293895548,
+          "mean_nmse": 0.2759472555569313,
+          "mean_iterations": 30.063333333333333,
+          "median_seconds": 0.002841850044205785,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.3144547801010177e-14
+        },
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP1_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 225,
+          "success_rate": 0.75,
+          "mean_mse": 0.007986403293895548,
+          "mean_nmse": 0.2759472555569313,
+          "mean_iterations": 30.063333333333333,
+          "median_seconds": 0.00257875001989305,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.3144547801010177e-14
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP1",
+          "trials": 300,
+          "errors": 0,
+          "successes": 300,
+          "success_rate": 1.0,
+          "mean_mse": 6.543665086434377e-11,
+          "mean_nmse": 6.958388436801316e-09,
+          "mean_iterations": 3.9033333333333333,
+          "median_seconds": 0.0019848999800160527,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.0017709040840815e-14
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP1_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 300,
+          "success_rate": 1.0,
+          "mean_mse": 6.543665086434377e-11,
+          "mean_nmse": 6.958388436801316e-09,
+          "mean_iterations": 3.9033333333333333,
+          "median_seconds": 0.0018850999767892063,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.0017709040840815e-14
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP1",
+          "trials": 300,
+          "errors": 0,
+          "successes": 98,
+          "success_rate": 0.32666666666666666,
+          "mean_mse": 0.037910725202054796,
+          "mean_nmse": 0.25342839060840816,
+          "mean_iterations": 31.273333333333333,
+          "median_seconds": 0.01578190003056079,
+          "converged": 300,
+          "max_relative_measurement_residual": 6.51512836635347e-15
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP1_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 98,
+          "success_rate": 0.32666666666666666,
+          "mean_mse": 0.037910725202054796,
+          "mean_nmse": 0.25342839060840816,
+          "mean_iterations": 31.273333333333333,
+          "median_seconds": 0.01585825002985075,
+          "converged": 300,
+          "max_relative_measurement_residual": 6.51512836635347e-15
+        }
+      ],
+      "algorithm_pair_differences": [],
+      "max_absolute_trial_metric_difference": {
+        "mse": 0.0,
+        "nmse": 0.0,
+        "relative_error": 0.0,
+        "paper_mse_db": 0.0
+      },
+      "manifest_sha256": "141f46190238c8e7ee30eea18f19414ea20df366899b3543cba92ebcbc4b3756",
+      "note": "Metrics recalculated directly from saved estimates and regenerated truth; bcs.metrics is not used. Different rcond values do not require identical NP0 and NP0_MEMBER estimates."
+    },
+    {
+      "directory": "D:\\贝叶斯\\np1_fix_20261023\\results\\np1_fix_20261023_b",
+      "passed": true,
+      "checks": {
+        "manifest_complete_without_errors": 1,
+        "manifest_output_integrity": 4,
+        "dataset_file_integrity": 1,
+        "trial_row_count": 1,
+        "unique_trial_records": 1,
+        "complete_trial_keys": 1,
+        "estimate_keys": 1,
+        "history_keys": 1,
+        "regenerated_dataset_equal": 2700,
+        "no_algorithm_error": 1800,
+        "regenerated_data_hash_matches": 1800,
+        "algorithm_seed_matches": 1800,
+        "estimate_shape_and_finite": 1800,
+        "history_shape_and_finite": 1800,
+        "time_contract": 1800,
+        "iteration_count": 1800,
+        "final_history_equal": 1800,
+        "elapsed_time_bounds": 1800,
+        "stopping_status_consistent": 1800,
+        "trial_metric_mse": 1800,
+        "trial_metric_nmse": 1800,
+        "trial_metric_relative_error": 1800,
+        "trial_metric_paper_mse_db": 1800,
+        "trial_success_threshold": 1800,
+        "algorithms_share_data_hash": 900,
+        "summary_groups": 1,
+        "summary_trials": 6,
+        "summary_errors": 6,
+        "summary_successes": 6,
+        "summary_success_rate": 6,
+        "summary_mean_mse": 6,
+        "summary_mean_nmse": 6,
+        "summary_mean_iterations": 6,
+        "summary_median_seconds": 6
+      },
+      "failures": {},
+      "failure_examples": [],
+      "config": {
+        "n": 100,
+        "seed": 20261019,
+        "trials": 300,
+        "amplitudes": "normal",
+        "max_iter": 300,
+        "tol": 0.001,
+        "success_threshold": 0.001,
+        "cases": [
+          [
+            10,
+            3
+          ],
+          [
+            30,
+            3
+          ],
+          [
+            30,
+            15
+          ]
+        ],
+        "algorithms": [
+          "NP1",
+          "NP1_MEMBER"
+        ]
+      },
+      "independent_summary": [
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP1",
+          "trials": 300,
+          "errors": 0,
+          "successes": 225,
+          "success_rate": 0.75,
+          "mean_mse": 0.007986403293895548,
+          "mean_nmse": 0.2759472555569313,
+          "mean_iterations": 30.063333333333333,
+          "median_seconds": 0.0026787499664351344,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.3144547801010177e-14
+        },
+        {
+          "m": 10,
+          "k": 3,
+          "algorithm": "NP1_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 225,
+          "success_rate": 0.75,
+          "mean_mse": 0.007986403293895548,
+          "mean_nmse": 0.2759472555569313,
+          "mean_iterations": 30.063333333333333,
+          "median_seconds": 0.0026240000152029097,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.3144547801010177e-14
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP1",
+          "trials": 300,
+          "errors": 0,
+          "successes": 300,
+          "success_rate": 1.0,
+          "mean_mse": 6.543665086434377e-11,
+          "mean_nmse": 6.958388436801316e-09,
+          "mean_iterations": 3.9033333333333333,
+          "median_seconds": 0.002112049958668649,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.0017709040840815e-14
+        },
+        {
+          "m": 30,
+          "k": 3,
+          "algorithm": "NP1_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 300,
+          "success_rate": 1.0,
+          "mean_mse": 6.543665086434377e-11,
+          "mean_nmse": 6.958388436801316e-09,
+          "mean_iterations": 3.9033333333333333,
+          "median_seconds": 0.0018711999873630702,
+          "converged": 300,
+          "max_relative_measurement_residual": 1.0017709040840815e-14
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP1",
+          "trials": 300,
+          "errors": 0,
+          "successes": 98,
+          "success_rate": 0.32666666666666666,
+          "mean_mse": 0.037910725202054796,
+          "mean_nmse": 0.25342839060840816,
+          "mean_iterations": 31.273333333333333,
+          "median_seconds": 0.017710400046780705,
+          "converged": 300,
+          "max_relative_measurement_residual": 6.51512836635347e-15
+        },
+        {
+          "m": 30,
+          "k": 15,
+          "algorithm": "NP1_MEMBER",
+          "trials": 300,
+          "errors": 0,
+          "successes": 98,
+          "success_rate": 0.32666666666666666,
+          "mean_mse": 0.037910725202054796,
+          "mean_nmse": 0.25342839060840816,
+          "mean_iterations": 31.273333333333333,
+          "median_seconds": 0.018484050000552088,
+          "converged": 300,
+          "max_relative_measurement_residual": 6.51512836635347e-15
+        }
+      ],
+      "algorithm_pair_differences": [],
+      "max_absolute_trial_metric_difference": {
+        "mse": 0.0,
+        "nmse": 0.0,
+        "relative_error": 0.0,
+        "paper_mse_db": 0.0
+      },
+      "manifest_sha256": "3e435f9517641ed274401c07ba89a26593deb6fbe97f40f0853413432d6b0566",
+      "note": "Metrics recalculated directly from saved estimates and regenerated truth; bcs.metrics is not used. Different rcond values do not require identical NP0 and NP0_MEMBER estimates."
+    }
+  ]
+}
