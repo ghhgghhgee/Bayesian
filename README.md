@@ -84,3 +84,7 @@ python main.py run --config configs/np0_smoke.json --out results/np0_member_a
 2026-10-23：理论推导稿已交付；NP1 数值修复经组长重新验收。当前状态、证据及剩余任务见 [交付与验收](docs/交付与验收.md)。
 
 `python main.py package` 会包含 Word、PDF、PPT 交付文件及本地完整实验输出，可能较大；原论文所在 Projects、缓存和临时目录仍排除。阶段代码归档可使用 `git archive --format=zip --output=dist/team_checkpoint.zip HEAD`，只打包已提交文件，不含忽略的大型实验数据。最终全组包应在报告、PPT、正式实验齐全后生成。
+
+## 后四项同学从这里开始
+
+2026-10-24：成员基线已接入，见 [基线验收](docs/基线接入验收_20261024.md)。实验、报告、PPT、答辩同学请读 [后四项仓库使用指南](docs/后四项仓库使用指南.md)。正式六成员配置是 `configs/team_members/paper.json`，运行必须加 `--registry algorithms_baselines_member.json`；旧 paper_members 配置仍保留旧参考基线供历史追溯。
