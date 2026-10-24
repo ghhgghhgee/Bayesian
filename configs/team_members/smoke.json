@@ -1,0 +1,33 @@
+{
+  "n": 100,
+  "seed": 20261019,
+  "trials": 5,
+  "amplitudes": "normal",
+  "max_iter": 300,
+  "tol": 0.001,
+  "success_threshold": 0.001,
+  "cases": [
+    [
+      10,
+      3
+    ],
+    [
+      30,
+      3
+    ],
+    [
+      30,
+      15
+    ]
+  ],
+  "algorithms": [
+    "NP0_MEMBER",
+    "NP1_MEMBER",
+    "SBL_MEMBER",
+    "IRLS_MEMBER",
+    "FOCUSS_MEMBER",
+    "BP_MEMBER"
+  ],
+  "stage": "integrated_members_pending_full_scan",
+  "notes": "Use --registry algorithms_baselines_member.json. All six member entries; baseline numerical choices documented in docs/baselines_member.md. Full 59-case scan has not been completed."
+}
