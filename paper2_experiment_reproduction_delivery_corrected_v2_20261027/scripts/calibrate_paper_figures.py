@@ -15,12 +15,14 @@ for _name in ("OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "OMP_NUM_THREADS"):
 import argparse
 import csv
 import json
+import sys
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 
 from bcs.algorithms import posterior, solve
 from bcs.metrics import metrics

@@ -51,7 +51,7 @@ def main():
             figures / "fig4_computational_cost_trial0_paper_scaled.png",
             comparison / "fig4_side_by_side",
             "Fig. 4",
-            "Reproduction Fig. 4 (paper-time scaled)",
+            "Exploratory Fig. 4 (artificial scaling; NOT hardware calibration)",
         ),
         (
             crops / "fig4.png",

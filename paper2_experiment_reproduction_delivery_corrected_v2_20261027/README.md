@@ -1,41 +1,25 @@
-# Bayesian Compressive Sensing：论文 2 实验复现（计时核查修正版 v2）
+# member5：论文 2 实验与绘图交付
 
-这是新的独立 GitHub 交付目录；旧交付与其他成员文件未被覆盖。
+**2026-10-28 审查修订：正式入口已切换六成员版本。** 旧参考实现不能代替正式扫描。完整命令见 [member5_PR4修订说明](../docs/member5_PR4修订说明_20261028.md)，运行与验证结果见 [RESULTS_REPORT.md](RESULTS_REPORT.md)。
 
-## 本轮修正
+## 正式交付
 
-- IRLS0 改用数学等价的加权正规方程，避免 Fig. 4 中无用的 SVD/协方差开销。
-- Fig. 4 计时不再读取并行 Monte Carlo 进程中的单次时间；改为串行预热后独立重复 15 次并取累计时间中位数。
-- `fig4_computational_cost_trial0` 是本机实测时间。
-- `fig4_computational_cost_trial0_paper_scaled` 是使用一个公共硬件尺度因子的论文对照版本。
-- Fig. 3 共 59 个工况，每点 300 次 Monte Carlo，6 个算法共 106,200 条记录。
-- Fig. 3 的 IRLS0 经等价实现复核后成功率逐点不变；剩余差异属于原作者 IRLS0 实现和参数未公开，未使用论文数字化数据替换仿真结果。
+- `results/team_members_20261028/`：统一 `configs/team_members/paper.json` + `algorithms_baselines_member.json` 的正式结果、CSV、manifest、Fig.1/3/4 和论文对照图。
+- `../scripts/member5_plot_paper.py`：正式绘图入口，读取统一扫描结果。请从仓库根目录运行，不使用本目录旧脚本作为正式扫描入口。
+- `../tests/test_member5_figures.py`：针对本次审查的回归测试。
+- Fig.4 使用本机实测串行时间，不做终点对齐；原始 dB 与显示截断值分列保存。
+- IRLS 如实标注 `IRLS (p=0.5, member)`，与论文 IRLS0 仍有方法差异，不为拟合图片改算法或挑样本。
 
-## 关键文件
+## 探索性补充（2026-10-27 历史结果）
 
-- `docs/论文2_IRLS与Fig4计时核查修正_20261027.md`：本轮诊断与修正说明。
-- `results/figures/fig3_success_rate.pdf`：真实 300 次 Monte Carlo 成功率。
-- `results/figures/fig4_computational_cost_trial0.pdf`：本机串行中位实测时间。
-- `results/figures/fig4_computational_cost_trial0_paper_scaled.pdf`：论文硬件尺度对照。
-- `results/comparison/fig4_side_by_side.pdf`：论文与硬件尺度版本并排对照。
-- `results/comparison/fig4_measured_side_by_side.pdf`：论文与本机实测版本并排对照。
-- `results/data/fig4_trial0_curves.csv`：实测时间中位数、四分位数、缩放时间和 MSE。
-- `results/calibration/`：IRLS 列归一化、p 延续、初始平滑量、l1 暖启动和幅度分布筛查。
+本目录 `bcs/`、`scripts/`、`results/data/`、`results/raw_cases/`、`results/calibration/`、`results/figures/`、`results/comparison/` 以及旧日期说明均为参考实现探索记录，**不是成员正式结果**。旧 IRLS 使用真实 K 的额外先验、NP0 tol=1e-4，不能与正式算法等条件比较。
 
-## 复现
+旧 `paper_scaled` 图片使用任意公共因子 `0.095 / SBL终点`，只是人为形状对照，**不是硬件换算，也不是计时正确性的证据**。正式报告/PPT 使用 `results/team_members_20261028/figures/fig4_measured_trial0.pdf`。
 
-```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
-python -m pip install -r requirements.txt
-python scripts/reproduce_paper_figures.py --out results_rerun --workers 8 --profile paper-aligned
+原有 51 项测试只描述旧工作区，不证明新逻辑正确；新验证以 RESULTS_REPORT 为准。完整 NPZ 按团队规则不进 Git，位置和 SHA256 见正式 manifest 与报告。
+
+探索脚本入口检查（仅查看帮助）：
+
+```powershell
+python paper2_experiment_reproduction_delivery_corrected_v2_20261027/scripts/calibrate_paper_figures.py --help
 ```
-
-之后将原论文裁图放入 `results_rerun/comparison/paper_crops/`，再运行：
-
-```bash
-python scripts/build_paper_figure_comparisons.py --run results_rerun
-```
-
-绝对运行时间依赖硬件；算法迭代次数和误差轨迹不使用时间缩放。

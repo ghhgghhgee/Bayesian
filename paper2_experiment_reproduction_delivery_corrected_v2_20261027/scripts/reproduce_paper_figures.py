@@ -1,4 +1,8 @@
-"""Reproduce Figs. 1, 3 and 4 from Zhou et al. (2015).
+"""SUPPLEMENTARY exploration only; not the six-member formal experiment.
+
+The paper-aligned IRLS variant receives oracle true K; NP0 tolerance is changed.
+Formal entry: repository main.py with configs/team_members/paper.json and
+algorithms_baselines_member.json; plot using scripts/member5_plot_paper.py.
 
 The Fig. 3 scan uses 300 Monte Carlo trials at every paper scan point.  Raw
 trial records are retained, while full iteration histories are retained only
@@ -218,6 +222,8 @@ def _summarize(rows: list[dict]):
 
 
 def _save_figure(fig, base: Path):
+    if base.name.startswith(('fig3', 'fig4')):
+        fig.suptitle('EXPLORATORY reference solvers; IRLS uses oracle true K; NP0 tol=1e-4', fontsize=9)
     fig.savefig(base.with_suffix(".pdf"), bbox_inches="tight")
     fig.savefig(base.with_suffix(".png"), dpi=240, bbox_inches="tight")
     plt.close(fig)
@@ -280,7 +286,7 @@ def _plot_fig3(summary_rows: list[dict], figures: Path, include_focuss: bool, su
                 markevery=1,
                 fillstyle=style["fillstyle"],
                 markeredgewidth=1.05,
-                label="IRLS$_0$" if name == "IRLS" else name.replace("NP1", "NP-1").replace("NP0", "NP-0"),
+                label="IRLS (oracle true K)" if name == "IRLS" else name.replace("NP1", "NP-1").replace("NP0", "NP-0"),
             )
         ax.set(xlabel=xlabel, ylabel="Success Rate", xlim=(0, 30), ylim=(0, 1))
         ax.set_xticks(np.arange(0, 31, 5))
@@ -352,12 +358,13 @@ def _figure4(curves: dict, figures: Path, data_dir: Path, profile: str):
         history = curve["history"]
         truth = curve["truth"]
         values = np.asarray([metrics(x, truth)["paper_mse_db"] for x in history], dtype=float)
-        values = np.maximum(values, -150)
+        raw_db = values.copy()
+        values = np.maximum(raw_db, -150)
         raw_times = curve["times"]
         scaled_times = raw_times * time_scale
         prepared[name] = (values, raw_times, scaled_times)
-        for iteration, (raw_elapsed, q25, q75, normalized_elapsed, db) in enumerate(
-            zip(raw_times, curve["time_q25"], curve["time_q75"], scaled_times, values), start=1
+        for iteration, (raw_elapsed, q25, q75, normalized_elapsed, db, display_db) in enumerate(
+            zip(raw_times, curve["time_q25"], curve["time_q75"], scaled_times, raw_db, values), start=1
         ):
             rows.append(
                 dict(
@@ -373,6 +380,9 @@ def _figure4(curves: dict, figures: Path, data_dir: Path, profile: str):
                     elapsed_seconds_paper_normalized=float(normalized_elapsed),
                     time_scale=float(time_scale),
                     paper_mse_db=float(db),
+                    raw_db=float(db),
+                    display_db=float(display_db),
+                    display_clipped=bool(db < -150),
                 )
             )
 
@@ -381,7 +391,7 @@ def _figure4(curves: dict, figures: Path, data_dir: Path, profile: str):
         for name in FIG4_ALGORITHMS:
             values, raw_times, scaled_times = prepared[name]
             times = scaled_times if use_scaled_time else raw_times
-            label = "IRLS$_0$" if name == "IRLS" else name.replace("NP1", "NP-1")
+            label = "IRLS (oracle true K)" if name == "IRLS" else name.replace("NP1", "NP-1")
             style = FIG4_STYLE[name]
             plot_kwargs = dict(
                 color=style["color"], marker=style["marker"], fillstyle=style["fillstyle"],
@@ -390,13 +400,13 @@ def _figure4(curves: dict, figures: Path, data_dir: Path, profile: str):
             axes[0].plot(times, values, **plot_kwargs)
             axes[1].plot(np.arange(1, len(values) + 1), values, **plot_kwargs)
         if use_scaled_time:
-            axes[0].set(xlabel="Paper-Hardware-Normalized Time (s)", xlim=(0, 0.1))
+            axes[0].set(xlabel="Artificially rescaled time (s)\nShape comparison only; NOT hardware calibration", xlim=(0, 0.1))
             axes[0].set_xticks(np.arange(0, 0.101, 0.02))
         else:
             maximum = max(float(values[1][-1]) for values in prepared.values())
             right = max(0.001, maximum * 1.06)
             axes[0].set(xlabel="Measured Computation Time (s)", xlim=(0, right))
-        axes[0].set(ylabel="MSE (dB)", ylim=(-150, 20))
+        axes[0].set(ylabel="MSE (dB; display floor -150)", ylim=(-150, 20))
         axes[1].set(xlabel="The Number of Iterations", ylabel="MSE (dB)", xlim=(0, 100), ylim=(-150, 20))
         axes[1].set_xticks(np.arange(0, 101, 20))
         for ax in axes:
@@ -457,7 +467,8 @@ def _manifest(out: Path, started: str, elapsed: float, workers: int, profile: st
             "The exact IRLS_0 implementation and tuning are not provided; this repository uses its documented local continuation variant.",
             "Fig. 4 is a representative trial; absolute time is hardware-dependent.",
             "The primary Fig. 4 uses a serial median-of-15 timing benchmark, not timings recorded during the parallel Monte Carlo run.",
-            "A separate paper-scaled Fig. 4 uses one common SBL-derived hardware factor; both raw and scaled times remain in the CSV.",
+            "The supplemental scaled Fig. 4 uses arbitrary SBL endpoint alignment, NOT hardware calibration or timing validation.",
+            "Exploratory reference solvers: paper-aligned IRLS receives oracle true K and NP0 uses tol=1e-4; not formal member results.",
             "FOCUSS is retained in the result data and a supplementary Fig. 3, but is not present in the paper's Fig. 3 legend.",
         ],
     )
