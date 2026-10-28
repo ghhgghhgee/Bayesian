@@ -1,0 +1,14 @@
+{
+  "NP0": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，待核心实现组替换/复核", "params": {"kind": "NP0"}},
+  "NP0_MEMBER": {"entrypoint": "algorithms.np0:solve", "owner": "NP-0 核心实现成员（feature/np0）", "params": {"rcond": 1e-15}},
+  "NP1": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，待核心实现组替换/复核", "params": {"kind": "NP1"}},
+  "SBL": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，EM版，待基线组复核", "params": {"kind": "SBL", "convergence_tol": 0.000001}},
+  "IRLS": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，局部平滑延续版，非原作者代码", "params": {"kind": "IRLS", "p": 0.5}},
+  "FOCUSS": {"entrypoint": "bcs.algorithms:solve", "owner": "组长参考实现，额外基线", "params": {"kind": "FOCUSS", "p": 0.0}},
+  "BP": {"entrypoint": "bcs.algorithms:solve", "owner": "SciPy HiGHS 线性规划，组长封装", "params": {"kind": "BP"}},
+  "NP1_MEMBER": {"entrypoint": "NP1:solve", "owner": "NP1核心实现组成员（陈奥力）", "params": {"rcond": 1e-12, "variance_floor": 1e-30}},
+  "SBL_MEMBER": {"entrypoint": "algorithms.baselines_member:solve_sbl", "owner": "基线算法成员，Python SBL-EM 独立实现", "params": {"convergence_tol": 1e-8}},
+  "FOCUSS_MEMBER": {"entrypoint": "algorithms.baselines_member:solve_focuss", "owner": "基线算法成员，Python 基础 FOCUSS 独立实现", "params": {"convergence_tol": 1e-8, "p": 0.0}},
+  "IRLS_MEMBER": {"entrypoint": "algorithms.baselines_member:solve_irls", "owner": "基线算法成员，Python 平滑 IRLS 独立实现", "params": {"convergence_tol": 1e-8, "p": 0.5, "epsilon_start": 1.0, "epsilon_min": 1e-8, "epsilon_factor": 0.1}},
+  "BP_MEMBER": {"entrypoint": "algorithms.baselines_member:solve_bp", "owner": "基线算法成员，SciPy HiGHS 等式约束 BP 封装", "params": {"lp_tolerance": 1e-9}}
+}

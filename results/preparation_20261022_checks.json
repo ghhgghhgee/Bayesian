@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": {
+    "output_hashes": true,
+    "all_six_historical_matches": true,
+    "standalone_replay_equal": true,
+    "noiseless_inputs": true,
+    "trial52_NP1_independent_metrics": true,
+    "trial52_NP1_MEMBER_independent_metrics": true,
+    "trial135_NP1_independent_metrics": true,
+    "trial135_NP1_MEMBER_independent_metrics": true,
+    "trial161_NP1_independent_metrics": true,
+    "trial161_NP1_MEMBER_independent_metrics": true,
+    "complete_unique_scan": true,
+    "member_algorithms_selected": true
+  }
+}

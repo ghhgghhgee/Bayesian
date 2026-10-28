@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "directory": "results\\team_grid_preflight_20261024",
+      "passed": true,
+      "checks": {
+        "complete_without_errors": 1,
+        "output_hash": 4,
+        "unique_records": 1,
+        "complete_coverage": 1,
+        "estimate_coverage": 1,
+        "no_algorithm_error": 354,
+        "regenerated_data_hash": 354,
+        "finite_estimate_shape": 354,
+        "metric_mse": 354,
+        "metric_nmse": 354,
+        "metric_relative_error": 354,
+        "metric_paper_mse_db": 354,
+        "success_label": 354,
+        "noiseless_feasibility": 354,
+        "summary_row_count": 1,
+        "unique_summary": 354,
+        "summary_trials": 354,
+        "summary_errors": 354,
+        "summary_successes": 354,
+        "summary_success_rate": 354,
+        "summary_mean_mse": 354,
+        "summary_mean_nmse": 354
+      },
+      "failures": {},
+      "failure_examples": [],
+      "manifest_sha256": "e17d9955809df4b9d7a9e51591597a510e168b2eb4e29afe34c994ef9f9cb6cf"
+    }
+  ],
+  "script_sha256": "86805147cb05d3a209e6886cb7460028246f294d3cad3da3beb125abe16c23a8",
+  "scope": "Direct metrics, success, summaries, input and output hashes. No bcs.metrics calls. Stopping rules and histories are covered by solver tests and run/compare, not this audit."
+}

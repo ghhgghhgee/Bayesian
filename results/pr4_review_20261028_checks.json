@@ -1,0 +1,231 @@
+{
+  "head": "3e1a857037b78d49383d002d0033f3c8a8363a67",
+  "hashes_ok": 91,
+  "hashes_bad": [],
+  "missing_outputs": [
+    "data/fig4_histories_300_trials.npz"
+  ],
+  "rows": 106200,
+  "unique_keys": 106200,
+  "groups": 354,
+  "group_sizes": {
+    "300": 354
+  },
+  "label_errors": 0,
+  "summary_errors": 0,
+  "replayed": [
+    {
+      "case": [
+        10,
+        3,
+        52
+      ],
+      "algorithm": "SBL",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        10,
+        3,
+        52
+      ],
+      "algorithm": "NP1",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        10,
+        3,
+        52
+      ],
+      "algorithm": "NP0",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        10,
+        3,
+        52
+      ],
+      "algorithm": "IRLS",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        10,
+        3,
+        52
+      ],
+      "algorithm": "FOCUSS",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        10,
+        3,
+        52
+      ],
+      "algorithm": "BP",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        15,
+        0
+      ],
+      "algorithm": "SBL",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        15,
+        0
+      ],
+      "algorithm": "NP1",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        15,
+        0
+      ],
+      "algorithm": "NP0",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        15,
+        0
+      ],
+      "algorithm": "IRLS",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        15,
+        0
+      ],
+      "algorithm": "FOCUSS",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        15,
+        0
+      ],
+      "algorithm": "BP",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        3,
+        0
+      ],
+      "algorithm": "SBL",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        3,
+        0
+      ],
+      "algorithm": "NP1",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        3,
+        0
+      ],
+      "algorithm": "NP0",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        3,
+        0
+      ],
+      "algorithm": "IRLS",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        3,
+        0
+      ],
+      "algorithm": "FOCUSS",
+      "relative_error_matches": true,
+      "iterations_match": true
+    },
+    {
+      "case": [
+        30,
+        3,
+        0
+      ],
+      "algorithm": "BP",
+      "relative_error_matches": true,
+      "iterations_match": true
+    }
+  ],
+  "same_A_y_different_trueK": [
+    {
+      "supplied_k": 1,
+      "iterations": 19,
+      "relative_error": 0.15748429303871994
+    },
+    {
+      "supplied_k": 3,
+      "iterations": 8,
+      "relative_error": 1.1345813867866742e-07
+    },
+    {
+      "supplied_k": 15,
+      "iterations": 7,
+      "relative_error": 9.455963846658255e-12
+    }
+  ],
+  "fig4_actual_final_db": [
+    {
+      "algorithm": "SBL",
+      "actual_final_db": -152.8774573516807
+    },
+    {
+      "algorithm": "NP1",
+      "actual_final_db": -177.6121168098068
+    },
+    {
+      "algorithm": "IRLS",
+      "actual_final_db": -138.9032869093827
+    }
+  ],
+  "calibrate_help_returncode": 1,
+  "calibrate_help_stderr": "Traceback (most recent call last):\n  File \"D:\\璐濆彾鏂痋tmp\\pr4_review_20261028\\paper2_experiment_reproduction_delivery_corrected_v2_20261027\\scripts\\calibrate_paper_figures.py\", line 25, in <module>\n    from bcs.algorithms import posterior, solve\nModuleNotFoundError: No module named 'bcs'\n"
+}

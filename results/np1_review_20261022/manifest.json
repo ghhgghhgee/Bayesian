@@ -1,0 +1,51 @@
+{
+  "purpose": "NP1 reference/member discrepancy review; not algorithm correctness certification",
+  "n": 100,
+  "m": 10,
+  "k": 3,
+  "trials": [
+    52,
+    135,
+    161
+  ],
+  "trial_indexing": "zero-based",
+  "seed": 20261019,
+  "amplitudes": "normal",
+  "max_iter": 300,
+  "tol": 0.001,
+  "success_threshold": 0.001,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.2.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "algorithms": {
+    "NP1": {
+      "entrypoint": "bcs.algorithms:solve",
+      "owner": "组长参考实现，待核心实现组替换/复核",
+      "params": {
+        "kind": "NP1"
+      },
+      "source": "bcs\\algorithms.py",
+      "sha256": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5"
+    },
+    "NP1_MEMBER": {
+      "entrypoint": "NP1:solve",
+      "owner": "NP1核心实现组成员（陈奥力）",
+      "params": {
+        "rcond": 1e-12,
+        "variance_floor": 1e-30
+      },
+      "source": "NP1.py",
+      "sha256": "1013b0f374e6e7383f3205c49be0fa2066f97e0aca7f9510f873d8d2938a5c69"
+    }
+  },
+  "script_sha256": "98498963be81e2d3ccd8a28d65db4f247781ae57a9ddcc6fe6d3d5ea744672c4",
+  "generator_sha256": "bcfc46140357b7c83b9815b3fd2ea1604d8262a181096fd0f3668801957f80ea",
+  "registry_sha256": "3cd78834222e5c92d19467161b99dfcb173874e514dec77116e97e8fde6d383a",
+  "historical_run": "results/leader_20261021_np1_a",
+  "outputs": {
+    "cases.npz": "18c3294865246ff53f06e5dd2d95d9ee465623d7e3d6beaf7aa619ff94df2321",
+    "coordinates.csv": "6d004e62a00ea72712854660f00d4a74975d6799800189205b899c21fc13b795",
+    "iterations.csv": "2cc6e78d767b594f537a4134a89d546de77a934a4d37d2c4211db89968c5467f",
+    "summary.csv": "0fab66d04bab647748e30079cd623659d077b7192a5aa33a05ba784bd8f7b0b7"
+  }
+}

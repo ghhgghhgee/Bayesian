@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "included": [
+    "docx",
+    "doc",
+    "pdf",
+    "pptx",
+    "ppt",
+    "py"
+  ],
+  "excluded_directories": [
+    "Projects",
+    "data",
+    "tmp",
+    "dist"
+  ],
+  "manifest_hashes_verified": true
+}
