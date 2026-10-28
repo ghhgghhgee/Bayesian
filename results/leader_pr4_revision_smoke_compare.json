@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": {
+    "completed_without_errors": true,
+    "same_config": true,
+    "same_source": true,
+    "same_algorithms": true,
+    "same_environment": true,
+    "output_integrity": true,
+    "same_trials_metrics_and_data": true,
+    "estimates.npz": true,
+    "histories.npz": true
+  },
+  "left": "results\\leader_pr4_revision_smoke_a",
+  "right": "results\\leader_pr4_revision_smoke_b",
+  "note": "Separate process replay; excludes wall-clock timing. Does not certify missing team submissions."
+}

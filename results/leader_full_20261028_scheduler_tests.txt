@@ -1,0 +1,8 @@
+test_original_cli_and_streaming_replay_match (test_replay_member_scan.ScanReplayTests.test_original_cli_and_streaming_replay_match) ... ok
+test_resume_checks_source_and_output_hashes (test_replay_member_scan.ScanReplayTests.test_resume_checks_source_and_output_hashes) ... ok
+test_streamed_npz_is_byte_identical_to_numpy (test_replay_member_scan.ScanReplayTests.test_streamed_npz_is_byte_identical_to_numpy) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 8.658s
+
+OK

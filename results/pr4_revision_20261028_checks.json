@@ -1,0 +1,141 @@
+{
+  "head": "453bd6d4f7132d58ef91175ca2c0fb3b38ecfaf0",
+  "core_git_blobs_unchanged": {
+    "main.py": true,
+    "NP1.py": true,
+    "algorithms/np0.py": true,
+    "algorithms/baselines_member.py": true,
+    "algorithms_baselines_member.json": true,
+    "configs/team_members/paper.json": true,
+    "bcs/data.py": true,
+    "bcs/metrics.py": true
+  },
+  "summary_checks": {
+    "rows": 354,
+    "unique_groups": 354,
+    "all_trials_300": true,
+    "all_errors_zero": true,
+    "rates_consistent": true,
+    "all_59_cases": true
+  },
+  "manifest_complete": true,
+  "manifest_errors": 0,
+  "experiment_commit": "d6bc1dcd74f42e5b1832e4c79ebf3f3fa53280c8",
+  "config_unchanged": true,
+  "fig4_replay": [
+    {
+      "algorithm": "SBL_MEMBER",
+      "iterations": 60,
+      "csv_iterations": 60,
+      "raw_final_db": -152.87745733637448,
+      "raw_db_matches": true,
+      "display_matches": true,
+      "raw_field_alias_matches": true,
+      "iqr_ordered": true
+    },
+    {
+      "algorithm": "NP1_MEMBER",
+      "iterations": 4,
+      "csv_iterations": 4,
+      "raw_final_db": -177.6121168098068,
+      "raw_db_matches": true,
+      "display_matches": true,
+      "raw_field_alias_matches": true,
+      "iqr_ordered": true
+    },
+    {
+      "algorithm": "IRLS_MEMBER",
+      "iterations": 41,
+      "csv_iterations": 41,
+      "raw_final_db": -106.5357638256547,
+      "raw_db_matches": true,
+      "display_matches": true,
+      "raw_field_alias_matches": true,
+      "iqr_ordered": true
+    }
+  ],
+  "member_provided_full_audit": {
+    "passed": true,
+    "runs": [
+      {
+        "directory": "paper2_experiment_reproduction_delivery_corrected_v2_20261027\\results\\team_members_20261028",
+        "passed": true,
+        "checks": {
+          "complete_without_errors": 1,
+          "output_hash": 4,
+          "unique_records": 1,
+          "complete_coverage": 1,
+          "estimate_coverage": 1,
+          "no_algorithm_error": 106200,
+          "regenerated_data_hash": 106200,
+          "finite_estimate_shape": 106200,
+          "metric_mse": 106200,
+          "metric_nmse": 106200,
+          "metric_relative_error": 106200,
+          "metric_paper_mse_db": 106200,
+          "success_label": 106200,
+          "noiseless_feasibility": 106200,
+          "summary_row_count": 1,
+          "unique_summary": 354,
+          "summary_trials": 354,
+          "summary_errors": 354,
+          "summary_successes": 354,
+          "summary_success_rate": 354,
+          "summary_mean_mse": 354,
+          "summary_mean_nmse": 354
+        },
+        "failures": {},
+        "failure_examples": [],
+        "manifest_sha256": "b824264468034336da481d38eb8b129609c5a905b4f84ed1482e54eccfe4abd5"
+      }
+    ],
+    "script_sha256": "86805147cb05d3a209e6886cb7460028246f294d3cad3da3beb125abe16c23a8",
+    "scope": "Direct metrics, success, summaries, input and output hashes. No bcs.metrics calls. Stopping rules and histories are covered by solver tests and run/compare, not this audit."
+  },
+  "scope": "Reviewer checked current Git blob identities, CSV summaries, and actual trial0 member trajectories. Full histories and estimates were not provided in Git.",
+  "selected_output_hash_checks": [
+    {
+      "path": "summary.csv",
+      "hash_matches": true
+    },
+    {
+      "path": "figures/fig3_success_rate.png",
+      "hash_matches": true
+    },
+    {
+      "path": "figures/fig4_measured_trial0.png",
+      "hash_matches": true
+    },
+    {
+      "path": "fig1_pdf_values.csv",
+      "hash_matches": true
+    },
+    {
+      "path": "fig4_trial0_curves.csv",
+      "hash_matches": true
+    }
+  ],
+  "review_tests_passed": 71,
+  "calibration_help_passed": true,
+  "review_smoke_calls": 180,
+  "review_smoke_compare": {
+    "passed": true,
+    "checks": {
+      "completed_without_errors": true,
+      "same_config": true,
+      "same_source": true,
+      "same_algorithms": true,
+      "same_environment": true,
+      "output_integrity": true,
+      "same_trials_metrics_and_data": true,
+      "estimates.npz": true,
+      "histories.npz": true
+    },
+    "left": "results\\leader_pr4_revision_smoke_a",
+    "right": "results\\leader_pr4_revision_smoke_b",
+    "note": "Separate process replay; excludes wall-clock timing. Does not certify missing team submissions."
+  },
+  "full_scan_replayed_by_reviewer": false,
+  "full_npz_paths_available_on_reviewer_machine": false,
+  "acquisition": "Git transfer failed with TLS EOF; selected files independently retrieved by GitHub blob API with SHA1 verification. Unchanged core files verified against latest remote tree. Full new trials.csv was not independently downloaded/counted."
+}

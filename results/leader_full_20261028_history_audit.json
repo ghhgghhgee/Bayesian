@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": {
+    "history_shape": 106200,
+    "history_finite": 106200,
+    "timing_contract": 106200,
+    "last_estimate_exact": 106200,
+    "complete_estimate_keys": 1,
+    "complete_history_keys": 1
+  },
+  "failures": {},
+  "examples": [],
+  "histories_sha256": "074d50c852039be03a680ec2bec69c7917f2fb208d5d2b2f6b399e02dd43f464",
+  "estimates_sha256": "34f40dfcc0dc96c87daf79e6ea73e58994d28ef84e00da1405fb4f3ff9d6758d",
+  "note": "Checks recorded trajectories; no member histories were available for cross-run trajectory comparison."
+}

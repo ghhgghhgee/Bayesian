@@ -88,3 +88,7 @@ python main.py run --config configs/np0_smoke.json --out results/np0_member_a
 ## 后四项同学从这里开始
 
 2026-10-24：成员基线已接入，见 [基线验收](docs/基线接入验收_20261024.md)。实验、报告、PPT、答辩同学请读 [后四项仓库使用指南](docs/后四项仓库使用指南.md)。正式六成员配置是 `configs/team_members/paper.json`，运行必须加 `--registry algorithms_baselines_member.json`；旧 paper_members 配置仍保留旧参考基线供历史追溯。
+
+## 完整数值复跑已验收
+
+2026-10-29：组长已完整重跑六成员 59 工况、每点 300 次，共 106,200 次，零异常；最终估计文件与成员发布的 SHA256 完全相同，独立指标审计通过。证据、低内存运行命令及轨迹比较范围见 [完整复跑验收](docs/组长完整复跑验收_20261029.md)。

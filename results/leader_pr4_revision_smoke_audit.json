@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "directory": "results\\leader_pr4_revision_smoke_a",
+      "passed": true,
+      "checks": {
+        "complete_without_errors": 1,
+        "output_hash": 4,
+        "unique_records": 1,
+        "complete_coverage": 1,
+        "estimate_coverage": 1,
+        "no_algorithm_error": 90,
+        "regenerated_data_hash": 90,
+        "finite_estimate_shape": 90,
+        "metric_mse": 90,
+        "metric_nmse": 90,
+        "metric_relative_error": 90,
+        "metric_paper_mse_db": 90,
+        "success_label": 90,
+        "noiseless_feasibility": 90,
+        "summary_row_count": 1,
+        "unique_summary": 18,
+        "summary_trials": 18,
+        "summary_errors": 18,
+        "summary_successes": 18,
+        "summary_success_rate": 18,
+        "summary_mean_mse": 18,
+        "summary_mean_nmse": 18
+      },
+      "failures": {},
+      "failure_examples": [],
+      "manifest_sha256": "dba6a153b568d2122f0170e17293e2ccd410b4acc4536cb3890d9c6e31013ea2"
+    },
+    {
+      "directory": "results\\leader_pr4_revision_smoke_b",
+      "passed": true,
+      "checks": {
+        "complete_without_errors": 1,
+        "output_hash": 4,
+        "unique_records": 1,
+        "complete_coverage": 1,
+        "estimate_coverage": 1,
+        "no_algorithm_error": 90,
+        "regenerated_data_hash": 90,
+        "finite_estimate_shape": 90,
+        "metric_mse": 90,
+        "metric_nmse": 90,
+        "metric_relative_error": 90,
+        "metric_paper_mse_db": 90,
+        "success_label": 90,
+        "noiseless_feasibility": 90,
+        "summary_row_count": 1,
+        "unique_summary": 18,
+        "summary_trials": 18,
+        "summary_errors": 18,
+        "summary_successes": 18,
+        "summary_success_rate": 18,
+        "summary_mean_mse": 18,
+        "summary_mean_nmse": 18
+      },
+      "failures": {},
+      "failure_examples": [],
+      "manifest_sha256": "442edf65a530dc858d3b8a54ede613c68effa13634242f73517175f0c89cea90"
+    }
+  ],
+  "script_sha256": "86805147cb05d3a209e6886cb7460028246f294d3cad3da3beb125abe16c23a8",
+  "scope": "Direct metrics, success, summaries, input and output hashes. No bcs.metrics calls. Stopping rules and histories are covered by solver tests and run/compare, not this audit."
+}

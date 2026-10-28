@@ -13,10 +13,15 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from bcs.data import generate
+from scripts._npz_arrays import NpzArrays
 
 
 def digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    value = hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b''):
+            value.update(block)
+    return value.hexdigest()
 
 
 def rows(path):
@@ -62,7 +67,7 @@ def audit(directory):
                 h.update(str(array.shape).encode()); h.update(array.tobytes())
             data[m, k, trial] = A, y, truth, h.hexdigest()
     grouped = defaultdict(list)
-    with np.load(directory / 'estimates.npz', allow_pickle=False) as estimates:
+    with NpzArrays(directory / 'estimates.npz') as estimates:
         check(set(estimates.files) == {f'm{m}_k{k}_t{t}_{a}' for m,k,t,a in expected}, 'estimate_coverage')
         for (m, k, trial, name), row in by_key.items():
             key = f'm{m}_k{k}_t{trial}_{name}'

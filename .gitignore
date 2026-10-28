@@ -6,3 +6,6 @@ data/
 dist/
 results/**/estimates.npz
 results/**/histories.npz
+
+# Local case checkpoints duplicate full replay outputs and can be regenerated.
+results/leader_full_*/cases/

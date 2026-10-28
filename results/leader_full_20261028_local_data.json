@@ -1,0 +1,26 @@
+{
+  "owner": "leader",
+  "files": [
+    {
+      "path": "D:\\贝叶斯\\results\\leader_full_20261028\\estimates.npz",
+      "bytes": 100102105,
+      "sha256": "34f40dfcc0dc96c87daf79e6ea73e58994d28ef84e00da1405fb4f3ff9d6758d",
+      "tracked_in_git": false
+    },
+    {
+      "path": "D:\\贝叶斯\\results\\leader_full_20261028\\histories.npz",
+      "bytes": 5163064654,
+      "sha256": "074d50c852039be03a680ec2bec69c7917f2fb208d5d2b2f6b399e02dd43f464",
+      "tracked_in_git": false
+    },
+    {
+      "path": "D:\\贝叶斯\\data\\leader_full_20261028\\240b2747ea36b8d3.npz",
+      "bytes": 312510812,
+      "sha256": "a1a2ecb233fce1a42382d3e3d70be383c5cd4fdd6e761e407e3ad35d282a7bb0",
+      "tracked_in_git": false
+    }
+  ],
+  "source_snapshot": "D:\\贝叶斯\\tmp\\leader_full_source_20261028",
+  "scheduler_source_commit": "31abb74d1976e83353499b4473316686e400f577",
+  "member_pr_head": "453bd6d4f7132d58ef91175ca2c0fb3b38ecfaf0"
+}

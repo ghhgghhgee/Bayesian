@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "checks": {
+    "leader_complete_without_errors": true,
+    "member_complete_without_errors": true,
+    "same_config": true,
+    "same_algorithm_sources_and_params": true,
+    "same_computational_sources": true,
+    "same_dataset_sha256": true,
+    "same_environment": true,
+    "same_thread_limits": true,
+    "member_estimates_hash_consistent": true,
+    "all_final_estimates_byte_identical": true,
+    "member_csv_download_verified": true,
+    "complete_trial_comparison": true,
+    "complete_summary_comparison": true,
+    "leader_output_integrity": true,
+    "leader_history_contract": true
+  },
+  "trials": {
+    "passed": true,
+    "rows_compared": 106200,
+    "differences": {},
+    "examples": [],
+    "max_absolute_numeric_differences": {}
+  },
+  "summary": {
+    "passed": true,
+    "rows_compared": 354,
+    "differences": {},
+    "examples": [],
+    "max_absolute_numeric_differences": {}
+  },
+  "final_estimates": {
+    "leader_sha256": "34f40dfcc0dc96c87daf79e6ea73e58994d28ef84e00da1405fb4f3ff9d6758d",
+    "member_published_sha256": "34f40dfcc0dc96c87daf79e6ea73e58994d28ef84e00da1405fb4f3ff9d6758d"
+  },
+  "leader_manifest_sha256": "48a4741d5eb6f1a2ad21a17fd1ef2820a72d5719650f745cc09ce95f3af895d8",
+  "member_manifest_sha256": "b824264468034336da481d38eb8b129609c5a905b4f84ed1482e54eccfe4abd5",
+  "histories": {
+    "passed": true,
+    "checks": {
+      "history_shape": 106200,
+      "history_finite": 106200,
+      "timing_contract": 106200,
+      "last_estimate_exact": 106200,
+      "complete_estimate_keys": 1,
+      "complete_history_keys": 1
+    },
+    "failures": {},
+    "examples": [],
+    "histories_sha256": "074d50c852039be03a680ec2bec69c7917f2fb208d5d2b2f6b399e02dd43f464",
+    "estimates_sha256": "34f40dfcc0dc96c87daf79e6ea73e58994d28ef84e00da1405fb4f3ff9d6758d",
+    "note": "Checks recorded trajectories; no member histories were available for cross-run trajectory comparison."
+  },
+  "script_sha256": "ad718ecc118fa459611294b1273ef526c3a9476a709f1f451e6ef7a0046987c4",
+  "source_scope": {
+    "all_snapshot_hashes_identical": false,
+    "reason": "Leader adds a tested streaming scheduler. Only computational source hashes must match; documentation/source snapshot differences are retained, not hidden."
+  },
+  "limitations": [
+    "Wall-clock time is not compared.",
+    "Member histories and member final NPZ were not transferred; final arrays are verified using the published deterministic archive SHA256. No cross-run history equality is claimed."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "multichunk_digest_matches": true,
+  "ignores_timing_only": true,
+  "detects_metric_corruption": true,
+  "detects_extra_rows": true
+}
