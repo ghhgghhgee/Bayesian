@@ -142,12 +142,13 @@ def plot_cost(run, folder, cfg, registry):
     write_csv(run/'fig4_trial0_curves.csv',rows)
 
 def plot_density(run,folder):
-    x=np.linspace(-5,5,301); x=x[x!=0]
+    # Include the true infinite value in CSV, but never join across it in the plot.
+    x=np.unique(np.r_[np.linspace(-5,5,301), -np.geomspace(1e-6,.03,60), np.geomspace(1e-6,.03,60)])
     values=[k0(np.abs(x)/np.sqrt(2))/(np.pi*np.sqrt(2)),.5*np.exp(-np.abs(x)),np.exp(-x*x/4)/np.sqrt(4*np.pi)]
     fig,ax=plt.subplots(figsize=(6.3,4.3),layout='constrained')
     for value,label,style in zip(values,['Normal Product','Laplace','Normal'],['k-','r--','b-.']):
-        ax.plot(x,value,style,label=label)
-    ax.set(xlabel='x',ylabel='P(x)',xlim=(-5,5),ylim=(0,.9),title='Common variance = 2; NP density diverges at zero')
+        ax.plot(x,np.where(np.isfinite(value),value,np.nan),style,label=label)
+    ax.set(xlabel='x',ylabel='P(x)',xlim=(-5,5),ylim=(0,.9),title='Common variance = 2; NP at zero: +inf (not plotted)')
     ax.legend(); ax.grid(ls=':',alpha=.4)
     save(fig,folder,'fig1_pdf_comparison')
     write_csv(run/'fig1_pdf_values.csv',[dict(x=a,normal_product=b,laplace=c,normal=d) for a,b,c,d in zip(x,*values)])

@@ -400,7 +400,8 @@ def _figure4(curves: dict, figures: Path, data_dir: Path, profile: str):
             axes[0].plot(times, values, **plot_kwargs)
             axes[1].plot(np.arange(1, len(values) + 1), values, **plot_kwargs)
         if use_scaled_time:
-            axes[0].set(xlabel="Artificially rescaled time (s)\nShape comparison only; NOT hardware calibration", xlim=(0, 0.1))
+            axes[0].set(xlabel="Artificially rescaled time (s)", xlim=(0, 0.1))
+            axes[0].set_title("Shape comparison only; NOT hardware calibration", fontsize=9)
             axes[0].set_xticks(np.arange(0, 0.101, 0.02))
         else:
             maximum = max(float(values[1][-1]) for values in prepared.values())

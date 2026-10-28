@@ -72,7 +72,7 @@ def main():
         manifest["outputs"] = {
             str(path.relative_to(run)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in sorted(run.rglob("*"))
-            if path.is_file() and path.name != "manifest.json"
+            if path.is_file() and path.name != "manifest.json" and "team_members_20261028" not in path.parts
         }
         manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
 

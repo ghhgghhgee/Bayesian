@@ -12,3 +12,5 @@ results_rerun/
 !results/data/**
 # Regenerable full trajectories stay local, per docs/Git协作.md.
 results/data/*.npz
+results/**/estimates.npz
+results/**/histories.npz
