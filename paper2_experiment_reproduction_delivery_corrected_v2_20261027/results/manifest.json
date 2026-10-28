@@ -1,0 +1,387 @@
+{
+  "paper": "Zhou, Liu, and Fang, Bayesian Compressive Sensing Using Normal Product Priors, IEEE SPL 2015",
+  "scope": "Figs. 1, 3, 4; Fig. 3 uses 300 Monte Carlo trials per point",
+  "config": {
+    "n": 100,
+    "seed": 20261019,
+    "trials": 300,
+    "amplitudes": "normal",
+    "max_iter": 300,
+    "tol": 0.001,
+    "success_threshold": 0.001,
+    "cases": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        9,
+        3
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        12,
+        3
+      ],
+      [
+        13,
+        3
+      ],
+      [
+        14,
+        3
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        16,
+        3
+      ],
+      [
+        17,
+        3
+      ],
+      [
+        18,
+        3
+      ],
+      [
+        19,
+        3
+      ],
+      [
+        20,
+        3
+      ],
+      [
+        21,
+        3
+      ],
+      [
+        22,
+        3
+      ],
+      [
+        23,
+        3
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        25,
+        3
+      ],
+      [
+        26,
+        3
+      ],
+      [
+        27,
+        3
+      ],
+      [
+        28,
+        3
+      ],
+      [
+        29,
+        3
+      ],
+      [
+        30,
+        3
+      ],
+      [
+        30,
+        1
+      ],
+      [
+        30,
+        2
+      ],
+      [
+        30,
+        4
+      ],
+      [
+        30,
+        5
+      ],
+      [
+        30,
+        6
+      ],
+      [
+        30,
+        7
+      ],
+      [
+        30,
+        8
+      ],
+      [
+        30,
+        9
+      ],
+      [
+        30,
+        10
+      ],
+      [
+        30,
+        11
+      ],
+      [
+        30,
+        12
+      ],
+      [
+        30,
+        13
+      ],
+      [
+        30,
+        14
+      ],
+      [
+        30,
+        15
+      ],
+      [
+        30,
+        16
+      ],
+      [
+        30,
+        17
+      ],
+      [
+        30,
+        18
+      ],
+      [
+        30,
+        19
+      ],
+      [
+        30,
+        20
+      ],
+      [
+        30,
+        21
+      ],
+      [
+        30,
+        22
+      ],
+      [
+        30,
+        23
+      ],
+      [
+        30,
+        24
+      ],
+      [
+        30,
+        25
+      ],
+      [
+        30,
+        26
+      ],
+      [
+        30,
+        27
+      ],
+      [
+        30,
+        28
+      ],
+      [
+        30,
+        29
+      ],
+      [
+        30,
+        30
+      ]
+    ],
+    "algorithms": [
+      "SBL",
+      "NP1",
+      "NP0",
+      "IRLS",
+      "FOCUSS",
+      "BP"
+    ],
+    "fig4_trial": 0,
+    "fig4_benchmark_repeats": 15,
+    "profile": "paper-aligned",
+    "paper_aligned_overrides": {
+      "sbl_tol": 1e-08,
+      "np0_tol": 0.0001,
+      "irls_p": 0,
+      "irls_schedule": "adaptive_order_statistic"
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "C:\\Users\\zhang\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "numpy": "2.2.4",
+    "scipy": "1.15.2",
+    "matplotlib": "3.10.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "workers": 8,
+    "thread_limits": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    }
+  },
+  "started_local": "2026-10-27 20:35:04 +0800",
+  "elapsed_seconds": 187.00280110002495,
+  "completed": true,
+  "outputs": {
+    "calibration/09_irls_internal_column_normalization.csv": "6eff86013821a81bd22a69fb2ab3a713454420ffb3e9fbe439c011bb502ea462",
+    "calibration/10_irls_p_continuation.csv": "87e133d54be9656b84b3d00011dfabec218e1487e0d83781a3e0237403f082b3",
+    "calibration/11_irls_initial_epsilon.csv": "0e9576a56da7435359f299935d7217cee6ece528d95f15f897d33d4ad1f75202",
+    "calibration/12_irls_l1_warm_start.csv": "fcb9383b07f32d0c12ff963ae572a04f0934772e40764f1ac4b5a2a87db5ea87",
+    "calibration/13_heavy_tail_amplitudes.csv": "91e1b90b700273478fe00171cf011fc516cbf653f7dc08a5aa1b1d70cb2735ed",
+    "calibration/14_irls_other_amplitudes.csv": "af4d4015a1b7892de146e09afc014607871a67df643c77727228caea0a629704",
+    "comparison/fig1_side_by_side.pdf": "3e00dda682a9e13f9edd1279ceef3665b4cd5138313c8c38622827c2185a190c",
+    "comparison/fig1_side_by_side.png": "78260ed62f5a2a571f4f0121c9ed63e561cc88fcff7f3194d51d67abb02e04c8",
+    "comparison/fig3_side_by_side.pdf": "0ecd48c72a7179896c52978e84172637f78addc34890a87e675619eb63a381c8",
+    "comparison/fig3_side_by_side.png": "3a9a18d390975919e31553fd4e81c1e32def889c7a3e0f574b117d510ac5689d",
+    "comparison/fig4_measured_side_by_side.pdf": "eeee1486e226b9b7be7f1950d1f48ea7a4dd51a46be22c49f0c6c6d0beff2725",
+    "comparison/fig4_measured_side_by_side.png": "c64306e192e47a9a310d00cb91abe988d8c22f08ed2c1005060b81c5eefd127a",
+    "comparison/fig4_side_by_side.pdf": "4b4726f7873f09c83d6cf1c572bf2cbe328132eb9df1ca4b7d4688dd59146ed5",
+    "comparison/fig4_side_by_side.png": "51686eb50e1afbac3b95132b299ce903c7f7244326eae977eebcc3992ca9e0c4",
+    "comparison/paper_crops/fig1.png": "5877a492395d232dd43ef5584c30bcfcc89e2ce8211a07ff15de70f764f68b96",
+    "comparison/paper_crops/fig3.png": "b97ec1ce1bc5d24e2866ab6fff62af60ad09cb233457cc2452322294be91b37a",
+    "comparison/paper_crops/fig4.png": "8da296a26598fe3586d923c353c4a5b325c1a42675543632e719ef1e2208647d",
+    "data/fig1_pdf_values.csv": "188fbd6ae4506c32738348d7c4feddeae0c11d39c7d764cf674b685a318add9b",
+    "data/fig4_histories_300_trials.npz": "f94189784fa0aa3ac92f275be05f252acd5b53470c3f1fdd113ab5fe91377e26",
+    "data/fig4_trial0_curves.csv": "ef24544b6baa15d03fa1cf18e21e394c9ee5c40de3f11fa96e50ee0f83917005",
+    "data/summary.csv": "93b86c4cf430f12bf9a6c2926911dd1af6e77ba4f0fd1d946d4abcb761e3ff09",
+    "data/trials.csv": "1ec59ab481d32dfb2c8f0ef6bb4144eccc1c8e53a70d7f36a14fa5989b10239d",
+    "figures/fig1_pdf_comparison.pdf": "84cbbd4581a6a1aceb11e594e6006d45765f7a3143966cc7052e433a944aab5a",
+    "figures/fig1_pdf_comparison.png": "efb294a1768cf389394ab4ef6c0ae4d7df6a4cd17984837d04b8ee5588ed4f7a",
+    "figures/fig3_success_rate.pdf": "64c8ed2c0e684212df19edb5e18b95c8438958f6b647df4c9a2d9dc423c80e71",
+    "figures/fig3_success_rate.png": "97e7f9d00be83261c7c60871c9b6859b28702f35bad180cdaefaf3a579fbd25b",
+    "figures/fig3_success_rate_with_focuss.pdf": "bc97e4c5312e732d777bf91189ade9c17f45667619dc527c6cab1282c2e9ac66",
+    "figures/fig3_success_rate_with_focuss.png": "b1341f3ad110fd5f99cb89c115d90c730b86c37b7ccedeeb7f79e42b8592a67b",
+    "figures/fig4_computational_cost_trial0.pdf": "bbcbab0c7f4e2ebb6260af43868c17f1575b2059cc99ecccb56d226f6c804cdd",
+    "figures/fig4_computational_cost_trial0.png": "a526785bd7cdca732864fbdfe2e93151dfaaaf92dae5bec37d02295cc8dade0b",
+    "figures/fig4_computational_cost_trial0_paper_scaled.pdf": "156a6f28f459ffe4b461c51a92d4c17fcc6fa8bacbae8d53469f37569d16334e",
+    "figures/fig4_computational_cost_trial0_paper_scaled.png": "92817e2707bce857a74b8e3d37fe0dee9baf23a4f6a179443ef685b4bd79ab34",
+    "raw_cases/m01_k03.csv": "e1445bf85dcd432b86c1bba123d7bfca2b866007fa21f112e9313d772ee8ced4",
+    "raw_cases/m02_k03.csv": "b3968fe144f8a36b64322c6f919b9f06b9ba4b1fb23e061f47f7da2ac75479da",
+    "raw_cases/m03_k03.csv": "f1e84ab33863d6d6e87803840246562f04130a8d9d4afd6d814f81380342f2ab",
+    "raw_cases/m04_k03.csv": "e9735748f225703d59eac2db6484bb7f753182397997ab88cca120cc457adb9e",
+    "raw_cases/m05_k03.csv": "e924c63bb150dfd415ccc5720b081b783c86757dd7e06901373cc37f1fc33b4e",
+    "raw_cases/m06_k03.csv": "75f925bb6dbe69ee878e1bc368feb531071c3fb548ccc9feb1a11083da5d43d2",
+    "raw_cases/m07_k03.csv": "08c45dfb79a232b16ff879aff5b8f3c6d8bd682b18a485f8db0b6d1799b538df",
+    "raw_cases/m08_k03.csv": "de9382f11cfaf92d5bb65b1dbd7761de6e083be61a4e44cff2a35bcfe97c1292",
+    "raw_cases/m09_k03.csv": "07da12f30908bdbf7837e5d33fbc217b53620c67994084859fb050a7f5bac4cb",
+    "raw_cases/m10_k03.csv": "e3006c20813339ee7c7e400cd49fac9301b02672597094ede3f683d70cf38515",
+    "raw_cases/m11_k03.csv": "26b16eef74c6e18161dd272c805a450df721bc1f6774536388eb48de281bcbc1",
+    "raw_cases/m12_k03.csv": "96ae43c2802ca48d4da966fad4d20effb5ca7a619102a3de3c8da57eca111cee",
+    "raw_cases/m13_k03.csv": "53099a450ff24c7d3dbf8a2ee7dbbafdfd75823332959f208af56767ae074be4",
+    "raw_cases/m14_k03.csv": "f9c8be1f104d711cec9f9bb902644aed61c8b74a4976204d5b2501bf0cbdcca8",
+    "raw_cases/m15_k03.csv": "6d7bf6271bd848581e431f93c8c609ab49d3724a85eca6420fbeb212546c4837",
+    "raw_cases/m16_k03.csv": "ce627d03179ee7e4c23c1eb49fdc9d320750f3fc41c549fe8660e865d7598776",
+    "raw_cases/m17_k03.csv": "765eb7c967877f05740046f12279724b7e1010523f242e9560e97f8b2f57afe7",
+    "raw_cases/m18_k03.csv": "626585028d1c473a91b2025a89775a5a1e9ea91dfb96b8846577afa418e59a5e",
+    "raw_cases/m19_k03.csv": "fe4be7ab6dafc5afe9cf14b737fc11ac79bcd52b2ac11b61b22f0a1e77ea2d86",
+    "raw_cases/m20_k03.csv": "862ccb96e338f6c08ac5fa8f5666055fa0df8f286b9a7777fde19dc9ac247ece",
+    "raw_cases/m21_k03.csv": "b4c851dfe6a856387352381fb23ffd8b3dabe8a9aba6d24814d8e3cf48902b1f",
+    "raw_cases/m22_k03.csv": "0c151a303d5c9ba70f7617743eb49ec6c43169473006d385e61ad9fab77015f8",
+    "raw_cases/m23_k03.csv": "94af500d531ca531f62b93b9784b12985d12f9817c2a1a735bf1aff112c03b83",
+    "raw_cases/m24_k03.csv": "a931f679309fc8809552077b9a07d696ba3e4b1a69032d95c8a3d96ad9c7f124",
+    "raw_cases/m25_k03.csv": "88cb28ecdfa1888260821dcc6fa80d2dec6198514f03271efd2fa4ff28b5594b",
+    "raw_cases/m26_k03.csv": "da6516cb3a954bf689e55808e749d03c8481ea09197e2aae31b3c515e1dd640c",
+    "raw_cases/m27_k03.csv": "294312a41fc39aae28ed4f8e23bfab9432018a0b090bc1d3c3e3fc95f4389c3c",
+    "raw_cases/m28_k03.csv": "b95b273cc2056f4ca9f8b4ec8c236f89b67cbe9f7cbc988134675618e35bf889",
+    "raw_cases/m29_k03.csv": "7a7c025b00d7698d8d5e230767332ce63407a36b2875bdf164feda0180ac6ea8",
+    "raw_cases/m30_k01.csv": "8b3577fd68ccae04972e9b7d9e899e70c157308ed5d39666685f4da7c7e6bd97",
+    "raw_cases/m30_k02.csv": "1057460d660fd1e2b070e657146b6e2c8f22ef103d1788d2807c7b94294728e2",
+    "raw_cases/m30_k03.csv": "d01292485a694d2ba213709eac2e505e73507c4355587fe614e3f8ad128494cb",
+    "raw_cases/m30_k04.csv": "81ab0254d3307394289d2388d707e97fda63bdbe2ce894df55b8e4aea66df81e",
+    "raw_cases/m30_k05.csv": "2bd870a47f8dfa217832cfdda512d9e52aa326f7fc431282b37142294ddf0345",
+    "raw_cases/m30_k06.csv": "4189c94a56894ea4b36e1b80a473e81548b401e6e3de9a898b2f6b5481e667cd",
+    "raw_cases/m30_k07.csv": "2d826d057598e7aaaa9b934878f5d1971694202398b6aea9a19c19c10a69a365",
+    "raw_cases/m30_k08.csv": "73fa50261ba03b42e8c78c0a7112809a81c262cf709af87c5c9fe5f760ee311d",
+    "raw_cases/m30_k09.csv": "3ad9d898defe5c9cf09ea3ac992d99cbdc974502045eca1d9d1b924c2dd6c6b6",
+    "raw_cases/m30_k10.csv": "505b70f5d12bf833fb1cb402912edd40a5b2845074f2e13acd2baaaaaa5b23f9",
+    "raw_cases/m30_k11.csv": "ae2c86ad7ce57f0769639257728b1ca8c9ab0319b67fc5649aea16051844314f",
+    "raw_cases/m30_k12.csv": "ab6dbac8956e9326c23a063f03344aa8f45d2c4aeb3470cd0a24875945275a25",
+    "raw_cases/m30_k13.csv": "da04ec2f8218a64574611bc4206ace530b14d4186daba3bf882fe906deefa553",
+    "raw_cases/m30_k14.csv": "cc3f4a55b81a3ff341076f9b1f6a4d7a27f56fa6b30e7e92261e67f8402c2ac9",
+    "raw_cases/m30_k15.csv": "b12f202f376f055a030a6b61d1256b656ca78eeb35170af45f9b029760595c37",
+    "raw_cases/m30_k16.csv": "f1f7fe974cc3a17c3931432823cb7757aea879d3871a419afe48c36e4378ee17",
+    "raw_cases/m30_k17.csv": "ba2c6dbf1b1dd81f53c0d0f47c6a8d78b6708701b844bec8e9ec1c0cda45e26c",
+    "raw_cases/m30_k18.csv": "858a30d60f779b2a9c424aa8b68c6a71b75d79da1fd49043190161119739240c",
+    "raw_cases/m30_k19.csv": "70fddcc13643cb9539a3a5a8593bb98f53db27e709209a537c092e59d8aca4b0",
+    "raw_cases/m30_k20.csv": "2c3a61296bd35012771336ef2b92914466e0a23ce380479f5f732cd1d670cf75",
+    "raw_cases/m30_k21.csv": "d6e630aba75fe7fa24f593cdfec01acc2a7a349eec5c018ef8dfa4d226cebd2b",
+    "raw_cases/m30_k22.csv": "2f242041a83458a719872ff31084c65f153e4e50c17c51a760ba00cd83a89c0c",
+    "raw_cases/m30_k23.csv": "ffe5e3a0093564fd3f3fe5b5df80986c5550f6ec2f6b98dc90c62436c49a3bc3",
+    "raw_cases/m30_k24.csv": "bc6b4ca0880b0f214017117b66a0332b108028f9904a08cfe787621a5b5a4d7b",
+    "raw_cases/m30_k25.csv": "c83a7fd95552c332cb166e6b49553e181468345bb096ccc94594200b1bad7ce2",
+    "raw_cases/m30_k26.csv": "a64c5174c9c70bfacecea67936b3584eadee87bd713582eb39ceb34f0414dbc1",
+    "raw_cases/m30_k27.csv": "fded92794d31187681ba402864be8bb11aaebd0038fb8c51a626badd5f744439",
+    "raw_cases/m30_k28.csv": "b2a1c4c47afde47445fa2db5333d32dd9ca8a7c97509324959b85c8320a6befb",
+    "raw_cases/m30_k29.csv": "47ea4b071b5a960a95f552375c8ec1f2b02da99e5e3b4c78bbfe4845ddd74a72",
+    "raw_cases/m30_k30.csv": "c548cddc65197bf4e53d195129e59554d3a4ed8e3a3182d14b55c4c4b6fe92d4",
+    "README.md": "4af152c12643e5378910a8ff6d3c5a31ad3016c9049b531a6046c3d37428681a"
+  },
+  "limitations": [
+    "The paper does not specify the nonzero-amplitude distribution, support sampler, or random seed.",
+    "The exact IRLS_0 implementation and tuning are not provided; this repository uses its documented local continuation variant.",
+    "Fig. 4 is a representative trial; absolute time is hardware-dependent.",
+    "The primary Fig. 4 uses a serial median-of-15 timing benchmark, not timings recorded during the parallel Monte Carlo run.",
+    "A separate paper-scaled Fig. 4 uses one common SBL-derived hardware factor; both raw and scaled times remain in the CSV.",
+    "FOCUSS is retained in the result data and a supplementary Fig. 3, but is not present in the paper's Fig. 3 legend."
+  ]
+}

@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.matplotlib/
+tmp/
+results_rerun/
+
+# Keep CSV evidence despite the parent repository's data/ ignore rule.
+!results/data/
+!results/data/**
+# Regenerable full trajectories stay local, per docs/Git协作.md.
+results/data/*.npz
