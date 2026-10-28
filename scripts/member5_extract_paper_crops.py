@@ -21,7 +21,10 @@ def main():
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--pdftoppm',default='pdftoppm')
     args=parser.parse_args(); args.out.mkdir(parents=True,exist_ok=True)
-    with tempfile.TemporaryDirectory() as temp:
+    # Keep rendering in the selected output directory, including sandboxed Windows.
+    with tempfile.TemporaryDirectory(dir=args.out.resolve(),prefix='.render-') as temp:
+        if not Path(temp).resolve().is_relative_to(args.out.resolve()):
+            raise ValueError('Temporary rendering path escaped the output directory')
         for page in (2,4):
             target=Path(temp)/f'page{page}'
             subprocess.run([args.pdftoppm,'-f',str(page),'-l',str(page),'-scale-to','3200',
