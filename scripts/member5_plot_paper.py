@@ -157,14 +157,17 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run',required=True,type=Path)
     parser.add_argument('--paper-crops',type=Path,required=True)
+    parser.add_argument('--comparison-only',action='store_true',help='Refresh comparison sheets without rerunning timings or primary figures')
     args=parser.parse_args(); run=args.run.resolve()
     manifest=read_json(run/'manifest.json'); registry=read_json(ROOT/'algorithms_baselines_member.json')
     validate_run(run,manifest,registry)
     folder=run/'figures'; folder.mkdir(exist_ok=True)
-    plot_density(run,folder)
-    for all_six in [False,True]:
-        plot_success(read_csv(run/'summary.csv'),folder,all_six)
-    plot_cost(run,folder,manifest['config'],registry)
+    previous = read_json(run/'plot_manifest.json') if args.comparison_only else None
+    if not args.comparison_only:
+        plot_density(run,folder)
+        for all_six in [False,True]:
+            plot_success(read_csv(run/'summary.csv'),folder,all_six)
+        plot_cost(run,folder,manifest['config'],registry)
     for paper,name in [('fig1','fig1_pdf_comparison'),('fig3','fig3_success_rate'),('fig4','fig4_measured_trial0')]:
         fig,axes=plt.subplots(1,2,figsize=(14,6),layout='constrained')
         for ax,path,label in zip(axes,[args.paper_crops/f'{paper}.png',folder/f'{name}.png'],['Published paper','Member implementation (protocol differences disclosed)']):
@@ -178,6 +181,9 @@ def main():
                        outputs={str(p.relative_to(run)).replace('\\','/'):digest(p) for p in generated},
                        notes=['Measured serial timing only; no endpoint alignment.','Trial 0 fixed in advance, not selected for paper similarity.',
                               'IRLS_MEMBER p=0.5 is not the undocumented paper IRLS0.','FOCUSS included in data and six-curve supplement.'])
+    if previous is not None:
+        plot_manifest.update(plotting_commit=previous['plotting_commit'],plotting_source_sha256=previous['plotting_source_sha256'],
+                             comparison_commit=commit,comparison_source_sha256=digest(__file__))
     (run/'plot_manifest.json').write_text(json.dumps(plot_manifest,indent=2),encoding='utf-8')
     print(f'Generated formal figures: {folder}')
 
