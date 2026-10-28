@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "directory": "paper2_experiment_reproduction_delivery_corrected_v2_20261027\\results\\team_members_20261028",
+      "passed": true,
+      "checks": {
+        "complete_without_errors": 1,
+        "output_hash": 4,
+        "unique_records": 1,
+        "complete_coverage": 1,
+        "estimate_coverage": 1,
+        "no_algorithm_error": 106200,
+        "regenerated_data_hash": 106200,
+        "finite_estimate_shape": 106200,
+        "metric_mse": 106200,
+        "metric_nmse": 106200,
+        "metric_relative_error": 106200,
+        "metric_paper_mse_db": 106200,
+        "success_label": 106200,
+        "noiseless_feasibility": 106200,
+        "summary_row_count": 1,
+        "unique_summary": 354,
+        "summary_trials": 354,
+        "summary_errors": 354,
+        "summary_successes": 354,
+        "summary_success_rate": 354,
+        "summary_mean_mse": 354,
+        "summary_mean_nmse": 354
+      },
+      "failures": {},
+      "failure_examples": [],
+      "manifest_sha256": "b824264468034336da481d38eb8b129609c5a905b4f84ed1482e54eccfe4abd5"
+    }
+  ],
+  "script_sha256": "86805147cb05d3a209e6886cb7460028246f294d3cad3da3beb125abe16c23a8",
+  "scope": "Direct metrics, success, summaries, input and output hashes. No bcs.metrics calls. Stopping rules and histories are covered by solver tests and run/compare, not this audit."
+}

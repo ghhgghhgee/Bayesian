@@ -1,0 +1,30 @@
+{
+  "owner": "member5",
+  "files": [
+    {
+      "path": "D:\\Bayesian-main\\github_submission_20261028\\paper2_experiment_reproduction_delivery_corrected_v2_20261027\\results\\team_members_20261028\\estimates.npz",
+      "bytes": 100102105,
+      "sha256": "34f40dfcc0dc96c87daf79e6ea73e58994d28ef84e00da1405fb4f3ff9d6758d",
+      "uploaded_to_github": false
+    },
+    {
+      "path": "D:\\Bayesian-main\\github_submission_20261028\\paper2_experiment_reproduction_delivery_corrected_v2_20261027\\results\\team_members_20261028\\histories.npz",
+      "bytes": 5162869145,
+      "sha256": "a5cfc253ff9a112601a8159f4259f97ec63b05d53932db14f73d99770b989374",
+      "uploaded_to_github": false
+    },
+    {
+      "path": "D:\\Bayesian-main\\github_submission_20261028\\data\\member5_team_paper_20261028\\240b2747ea36b8d3.npz",
+      "bytes": 312510812,
+      "sha256": "a1a2ecb233fce1a42382d3e3d70be383c5cd4fdd6e761e407e3ad35d282a7bb0",
+      "uploaded_to_github": false
+    },
+    {
+      "path": "D:\\Bayesian-main\\github_submission_20261028\\paper2_experiment_reproduction_delivery_corrected_v2_20261027\\results\\data\\fig4_histories_300_trials.npz",
+      "bytes": 17877387,
+      "sha256": "f94189784fa0aa3ac92f275be05f252acd5b53470c3f1fdd113ab5fe91377e26",
+      "uploaded_to_github": false
+    }
+  ],
+  "note": "Local files retained for team handoff; not remotely accessible or uploaded. Retrieve from member5 or rerun the recorded source commit."
+}

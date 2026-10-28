@@ -1,0 +1,37 @@
+{
+  "experiment_manifest_sha256": "b824264468034336da481d38eb8b129609c5a905b4f84ed1482e54eccfe4abd5",
+  "experiment_commit": "d6bc1dcd74f42e5b1832e4c79ebf3f3fa53280c8",
+  "plotting_commit": "7c21c298febe8d74f832e2d80ffc31dcb8ea7e42",
+  "plotting_source_sha256": "739cdea36bca123ef40a7e2b3a7527572ac9b524d221b61996255dde6483cbe3",
+  "paper_crop_hashes": {
+    "fig1.png": "40a8e53395145a0aade550309cb6e69f7f132d6a08f99ed538bce852e2f2b392",
+    "fig3.png": "3f7588b9f6d9c93f546753e6da2f5e076612f8f5ca3ece998113cad7a8f4684e",
+    "fig4.png": "403498ee3e0b80b6cfdb5851664b225b54008647335496aa5c3e5d6075b2dc77"
+  },
+  "outputs": {
+    "figures/fig1_paper_comparison.pdf": "6826a24fc1c1094cec99ad69b60205bb72818f8ea174dbf1d12e3ab3d0909905",
+    "figures/fig1_paper_comparison.png": "c1aedbac6883211432da9a16aba9c5c7da36982cf1043ff052435bd68dcb2df1",
+    "figures/fig1_pdf_comparison.pdf": "712a12da6eec1457f52f5112eb67b640e8385c3a9485cb9734cb0f121f1c33e9",
+    "figures/fig1_pdf_comparison.png": "1bbbc4db3459463f0cdadb3f31f285596f282b8d68f86548edb345cfe9d4cd3e",
+    "figures/fig3_all_six.pdf": "424ee6ca68f8718365564529e5b76a92ef61524f92e434a263c2a88eb562849b",
+    "figures/fig3_all_six.png": "5d385844ad7d6035c132a9ddf85a0cbed4368799aa03a43501c42c914c69a9ae",
+    "figures/fig3_paper_comparison.pdf": "480cfc26466ef58a68c64c9d84066d9dd6bdeb7d12952d5652ed76b670cb9f78",
+    "figures/fig3_paper_comparison.png": "b68e850138d19728b6981788f5d7017fb0587fea50aed6173aed94f987ada8ee",
+    "figures/fig3_success_rate.pdf": "90baf27540d52d590bfe658d9f4f8c342b1ab9fbe7e796bcbbc7f7180304f591",
+    "figures/fig3_success_rate.png": "c0813a775774ffdf091e3a3eb405d96e97e001a4aee0c2a31b0e79a5710ec2e9",
+    "figures/fig4_measured_trial0.pdf": "6fea499042caa602c96009c8076245a98a180254b481c5c75a1aeba056e59d5d",
+    "figures/fig4_measured_trial0.png": "fefac1125dcc1ce713322e96cb477f33618fde40fd2d9273b7bcd66d926333cc",
+    "figures/fig4_paper_comparison.pdf": "93ceb41b6ccc60b1a7dc6c09a815a39cb7406b3fcd7baa0006ad77280a6177a4",
+    "figures/fig4_paper_comparison.png": "8b3da7144ef61f7e59428141342781af3912c5b2599c53628381a1f9b24d1d21",
+    "fig1_pdf_values.csv": "cbf223f2070aeef308d3502ef5bcd335634c63cf6a4991e2d2818014968f25a7",
+    "fig4_trial0_curves.csv": "c5eff6af9414052b15f1048051e3552061c63601d499d369cc3fc990cadfdd02"
+  },
+  "notes": [
+    "Measured serial timing only; no endpoint alignment.",
+    "Trial 0 fixed in advance, not selected for paper similarity.",
+    "IRLS_MEMBER p=0.5 is not the undocumented paper IRLS0.",
+    "FOCUSS included in data and six-curve supplement."
+  ],
+  "comparison_commit": "486061685928e604ecf3178aa57170354eb11ae6",
+  "comparison_source_sha256": "52dee602fcbed7435f00d9c1d5c6b2b14e7aa5094ba38ccc8aace7a956bbcf01"
+}

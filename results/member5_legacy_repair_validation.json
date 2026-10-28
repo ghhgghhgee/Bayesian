@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": {
+    "same_rows": true,
+    "preserved_original_measured_and_scaled_times": true,
+    "raw_db_recomputed_from_saved_history": true,
+    "display_clipping_separate": true,
+    "archived_hashes": true
+  },
+  "legacy_end_raw_db": {
+    "SBL": -152.8774573516807,
+    "NP1": -177.6121168098068,
+    "IRLS": -138.9032869093827
+  }
+}
