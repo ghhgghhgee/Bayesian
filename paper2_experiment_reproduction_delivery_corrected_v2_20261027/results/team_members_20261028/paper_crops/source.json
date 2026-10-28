@@ -1,0 +1,40 @@
+{
+  "source_pdf_name": "2 Bayesian_Compressive_Sensing_Using_Normal_Product_Priors.pdf",
+  "source_pdf_sha256": "36a1cf7a8352188043abb2542be27d759c5595045cf44e6b939924eb1b579f86",
+  "source_pages_1_based_and_normalized_rectangles": {
+    "fig1": [
+      2,
+      [
+        0.515,
+        0.075,
+        0.935,
+        0.3
+      ]
+    ],
+    "fig3": [
+      4,
+      [
+        0.53,
+        0.075,
+        0.93,
+        0.248
+      ]
+    ],
+    "fig4": [
+      4,
+      [
+        0.53,
+        0.267,
+        0.93,
+        0.437
+      ]
+    ]
+  },
+  "render_page_max_dimension": 3200,
+  "extraction_script_sha256": "36016639992bbe980c43315c6218ace5407e2654306617054cc48e70567001cb",
+  "outputs": {
+    "fig1.png": "40a8e53395145a0aade550309cb6e69f7f132d6a08f99ed538bce852e2f2b392",
+    "fig3.png": "3f7588b9f6d9c93f546753e6da2f5e076612f8f5ca3ece998113cad7a8f4684e",
+    "fig4.png": "403498ee3e0b80b6cfdb5851664b225b54008647335496aa5c3e5d6075b2dc77"
+  }
+}

@@ -1,0 +1,427 @@
+{
+  "config": {
+    "n": 100,
+    "seed": 20261019,
+    "trials": 300,
+    "amplitudes": "normal",
+    "max_iter": 300,
+    "tol": 0.001,
+    "success_threshold": 0.001,
+    "cases": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        9,
+        3
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        12,
+        3
+      ],
+      [
+        13,
+        3
+      ],
+      [
+        14,
+        3
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        16,
+        3
+      ],
+      [
+        17,
+        3
+      ],
+      [
+        18,
+        3
+      ],
+      [
+        19,
+        3
+      ],
+      [
+        20,
+        3
+      ],
+      [
+        21,
+        3
+      ],
+      [
+        22,
+        3
+      ],
+      [
+        23,
+        3
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        25,
+        3
+      ],
+      [
+        26,
+        3
+      ],
+      [
+        27,
+        3
+      ],
+      [
+        28,
+        3
+      ],
+      [
+        29,
+        3
+      ],
+      [
+        30,
+        3
+      ],
+      [
+        30,
+        1
+      ],
+      [
+        30,
+        2
+      ],
+      [
+        30,
+        4
+      ],
+      [
+        30,
+        5
+      ],
+      [
+        30,
+        6
+      ],
+      [
+        30,
+        7
+      ],
+      [
+        30,
+        8
+      ],
+      [
+        30,
+        9
+      ],
+      [
+        30,
+        10
+      ],
+      [
+        30,
+        11
+      ],
+      [
+        30,
+        12
+      ],
+      [
+        30,
+        13
+      ],
+      [
+        30,
+        14
+      ],
+      [
+        30,
+        15
+      ],
+      [
+        30,
+        16
+      ],
+      [
+        30,
+        17
+      ],
+      [
+        30,
+        18
+      ],
+      [
+        30,
+        19
+      ],
+      [
+        30,
+        20
+      ],
+      [
+        30,
+        21
+      ],
+      [
+        30,
+        22
+      ],
+      [
+        30,
+        23
+      ],
+      [
+        30,
+        24
+      ],
+      [
+        30,
+        25
+      ],
+      [
+        30,
+        26
+      ],
+      [
+        30,
+        27
+      ],
+      [
+        30,
+        28
+      ],
+      [
+        30,
+        29
+      ],
+      [
+        30,
+        30
+      ]
+    ],
+    "algorithms": [
+      "NP0_MEMBER",
+      "NP1_MEMBER",
+      "SBL_MEMBER",
+      "IRLS_MEMBER",
+      "FOCUSS_MEMBER",
+      "BP_MEMBER"
+    ],
+    "stage": "integrated_members_pending_full_scan",
+    "notes": "Use --registry algorithms_baselines_member.json. All six member entries; baseline numerical choices documented in docs/baselines_member.md. Full 59-case scan has not been completed."
+  },
+  "algorithms": {
+    "NP0_MEMBER": {
+      "entrypoint": "algorithms.np0:solve",
+      "owner": "NP-0 核心实现成员（feature/np0）",
+      "params": {
+        "rcond": 1e-15
+      },
+      "source_file": "D:\\Bayesian-main\\github_submission_20261028\\algorithms\\np0.py",
+      "sha256": "4783b2ee8d62cdfb4218deb3fd2a28fe199894894570ffd0cec92adf304cac6b"
+    },
+    "NP1_MEMBER": {
+      "entrypoint": "NP1:solve",
+      "owner": "NP1核心实现组成员（陈奥力）",
+      "params": {
+        "rcond": 1e-12,
+        "variance_floor": 1e-30
+      },
+      "source_file": "D:\\Bayesian-main\\github_submission_20261028\\NP1.py",
+      "sha256": "8652b3ec70a01d7041f289ca8615a4973031494ee97530e8478e97102c805feb"
+    },
+    "SBL_MEMBER": {
+      "entrypoint": "algorithms.baselines_member:solve_sbl",
+      "owner": "基线算法成员，Python SBL-EM 独立实现",
+      "params": {
+        "convergence_tol": 1e-08
+      },
+      "source_file": "D:\\Bayesian-main\\github_submission_20261028\\algorithms\\baselines_member.py",
+      "sha256": "737e4c983511ebd95bdfa896b570f6eac3ba2b9d4f840b0f554a8e7c39732bcf"
+    },
+    "IRLS_MEMBER": {
+      "entrypoint": "algorithms.baselines_member:solve_irls",
+      "owner": "基线算法成员，Python 平滑 IRLS 独立实现",
+      "params": {
+        "convergence_tol": 1e-08,
+        "p": 0.5,
+        "epsilon_start": 1.0,
+        "epsilon_min": 1e-08,
+        "epsilon_factor": 0.1
+      },
+      "source_file": "D:\\Bayesian-main\\github_submission_20261028\\algorithms\\baselines_member.py",
+      "sha256": "737e4c983511ebd95bdfa896b570f6eac3ba2b9d4f840b0f554a8e7c39732bcf"
+    },
+    "FOCUSS_MEMBER": {
+      "entrypoint": "algorithms.baselines_member:solve_focuss",
+      "owner": "基线算法成员，Python 基础 FOCUSS 独立实现",
+      "params": {
+        "convergence_tol": 1e-08,
+        "p": 0.0
+      },
+      "source_file": "D:\\Bayesian-main\\github_submission_20261028\\algorithms\\baselines_member.py",
+      "sha256": "737e4c983511ebd95bdfa896b570f6eac3ba2b9d4f840b0f554a8e7c39732bcf"
+    },
+    "BP_MEMBER": {
+      "entrypoint": "algorithms.baselines_member:solve_bp",
+      "owner": "基线算法成员，SciPy HiGHS 等式约束 BP 封装",
+      "params": {
+        "lp_tolerance": 1e-09
+      },
+      "source_file": "D:\\Bayesian-main\\github_submission_20261028\\algorithms\\baselines_member.py",
+      "sha256": "737e4c983511ebd95bdfa896b570f6eac3ba2b9d4f840b0f554a8e7c39732bcf"
+    }
+  },
+  "source_hashes": {
+    "main.py": "dd5632c4915774e9f8bc2044369407e3c2f830671c8e3cdc4f4d57569faf1cfe",
+    "NP1.py": "8652b3ec70a01d7041f289ca8615a4973031494ee97530e8478e97102c805feb",
+    "algorithms/baselines_member.py": "737e4c983511ebd95bdfa896b570f6eac3ba2b9d4f840b0f554a8e7c39732bcf",
+    "algorithms/np0.py": "4783b2ee8d62cdfb4218deb3fd2a28fe199894894570ffd0cec92adf304cac6b",
+    "algorithms/__init__.py": "92aadf96c676990284b23bbaf7a456acc7b8decfea7f888e9d50a03ff4a136db",
+    "bcs/algorithms.py": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5",
+    "bcs/data.py": "bcfc46140357b7c83b9815b3fd2ea1604d8262a181096fd0f3668801957f80ea",
+    "bcs/metrics.py": "5f26be5b5c90e5e788aebc6754220e45bb1b11759028d007a48c9f014837b904",
+    "bcs/__init__.py": "66f4f577ea750e9d152525a5248e00687f0b3aaf9a75d882eaa7547f5ad55c02",
+    "scripts/audit_np0_outputs.py": "b6292f154980765d0958b05274416bad9f01c4a73936b7f61a06daadf5a1504b",
+    "scripts/audit_np1_numerics.py": "578d0c0700d8603a64b3de2a60688e122d2bc22a12c1606dfa3437c23c4c4d03",
+    "scripts/audit_team_metrics.py": "86805147cb05d3a209e6886cb7460028246f294d3cad3da3beb125abe16c23a8",
+    "scripts/baselines_member_display.py": "3a9b72c91fd2ec945cebcb62194ac8d89bf531e58bdf8f9ba7b14bb72c019e3e",
+    "scripts/member5_plot_paper.py": "e8ec8a32ccd08f35b5da2763b1dc895da89707f62032d35d0dc52085a817176f",
+    "scripts/review_np1_cases.py": "98498963be81e2d3ccd8a28d65db4f247781ae57a9ddcc6fe6d3d5ea744672c4",
+    "tests/test_baselines_member.py": "95e087c3bf263bc42831363522ea7582bb783893fbafbf818f4146a35721b392",
+    "tests/test_cli.py": "ee5307fedfa1c0112b60dc0dbfd806f3146e2244a7162e7bc199b05029aa2797",
+    "tests/test_framework.py": "812cddab496c955702c8e5c249a4fc81b6cb0459d6727f5fa3326a7f231ae858",
+    "tests/test_member5_figures.py": "1ac48bf9515035e8b50b35eea6857113b4a38f14fffa88814d09e8a66b418f09",
+    "tests/test_np0.py": "ee29e731c9eb2e5d01e8bf9535afcb1d65af51263d294b486aacf92472be23da",
+    "tests/test_np1_formulas.py": "bd5296012ff5510b21b60fa41efb2bbb37c851e4a03ae11a1590174df1888dc0",
+    "tests/test_np1_member.py": "70957fa2525cb9eb3febc2de988a76a9fa87d7821ba5b9345195f5d53b89c6be",
+    "tests/test_np1_numerics.py": "348b5f7e8b4e9ed88a4e3d7ef277c27cbc1b009d0ab7fd3e0fe2e75afc9d656d",
+    "tests/test_registry.py": "09f77824d57a5b026e6ce48956b58c998d714fe2a2ec337b25323cbddaa2f223",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/bcs/algorithms.py": "e88aa2597b52b6556f97a2ba4a31a5e0d9bc1bdb2f7407ee543d7954e2bfe7b5",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/bcs/data.py": "bcfc46140357b7c83b9815b3fd2ea1604d8262a181096fd0f3668801957f80ea",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/bcs/metrics.py": "5f26be5b5c90e5e788aebc6754220e45bb1b11759028d007a48c9f014837b904",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/bcs/__init__.py": "66f4f577ea750e9d152525a5248e00687f0b3aaf9a75d882eaa7547f5ad55c02",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/scripts/build_paper_figure_comparisons.py": "19e005fa780823ab19f4ceb7c68588a726c1a7e29a5cb6b535919a8713b76e23",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/scripts/calibrate_paper_figures.py": "d42cccc7023bcd424f8274ba85efcb7078e5bd4cf8c0ea637a168171cd2ee232",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/scripts/repair_legacy_figures.py": "af42bf3923347d88afcccd4a56c8d2497de0435baf85316815ffd1b3ce705ebc",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/scripts/reproduce_paper_figures.py": "4c05b2a51d8bf0d6bd83fd2587bcf8ed1ab1e00972d961f3b398e69ac1f44e54",
+    "algorithms.json": "3cd78834222e5c92d19467161b99dfcb173874e514dec77116e97e8fde6d383a",
+    "algorithms_baselines_member.json": "9bbb4cfcd232bf201a52ede16c4b6fe296b977639a0e96e034e0532fcb976381",
+    "configs/all_algorithms_smoke.json": "925da9fd0d119b27818d13883c7f0584d292d130a1c59aeef3d11e995d7044f6",
+    "configs/np0_smoke.json": "34d3899f5d0911230a0b4e8057fc8314ce7826e8b79771fc790f262fe08633c0",
+    "configs/np0_validation.json": "546d8f959740b6cfe105c7bc586d1db69def557d1b7a8c8785dd9665f32a65ed",
+    "configs/np1_member.json": "0d50e4e01ebf7c5e912dd4635a00c0043f828cfca5b255c63b24c737ca1ca26b",
+    "configs/np1_validation.json": "3f16b3ede38240aab84fd5e7e589f131a62afc5dec15d95be14d4be6a96968a6",
+    "configs/paper.json": "f5c95254524e49a564706e6c7330e09db2275bfb8ca0cbe7450421a2412fa73a",
+    "configs/paper_members.json": "3c561cabb929525b5f628f6ff7abb3582422ae48954183c3d1e0d9e971ea5f6d",
+    "configs/paper_members_smoke.json": "684fe743fbd6dc553645ce03fbd367a11c04dbbbe036d027a5dd58bbb2dee790",
+    "configs/smoke.json": "dbec1cedf34012ef9700c55d75686577b71b2b33c921eae538bce99e5c127c53",
+    "configs/validation.json": "8b57df7e9738ba411ed5f77d3537ba7887045e887a15c4ef3fae571fac00526d",
+    "configs/baselines_member/paper.json": "04e358b968577aff2acf8ed87ee150268f48a4753e92a29552b2758a6fb14fc8",
+    "configs/baselines_member/smoke.json": "95f2b70077695ca6fcb592aea0646659c6df3052d414b133e7e98e6ce302f47e",
+    "configs/baselines_member/validation.json": "459b70da0dec957caab09b6ad5dfa81da7e51356ba5892c03f6677e6f1e17d1e",
+    "configs/team_members/paper.json": "070e77fea6867f624923fa2157b26fa5c2c1ba53bc2e86c63d25648a36cac6bd",
+    "configs/team_members/smoke.json": "4ef438c6abce30a446ab8a70cafcad4d0928a2893bcbc8c752cb4de9baadcaf8",
+    "requirements.txt": "956cb8778f55502f0a2172c13d253f92884db6ec6b09d28fc0bb0283293eeb27",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/requirements.txt": "956cb8778f55502f0a2172c13d253f92884db6ec6b09d28fc0bb0283293eeb27",
+    "README.md": "57f3d33a65a58340012b2187626815cd7708482a1adde8e787bd90e416520a3d",
+    "论文2_分工方案.md": "9e4f44a01ba44a9731401ddb59e763961728c7ed9a75eb82bfc77867f9510bca",
+    "论文2_翻译_Normal_Product_Priors.md": "b498bfdbff410c3d2099d702446c1e30a438bd91a90c6c66a3ccf3bb63f1797a",
+    "docs/baselines_member.md": "5c59ce12bf1cdc75aeeb35df8758a23a5442c228ed9dea46000f38903ebccb88",
+    "docs/baselines_member_validation.md": "ac6efb5486c7985dc1f26494186e6e71144f765334ad3f1c90946c14d19dea0c",
+    "docs/Git协作.md": "c973d42376227c500cf7fe27425bf64f7e9265d55686bc9ed135c2499f079c03",
+    "docs/member5_PR4修订说明_20261028.md": "a449f7fcda21c77d3679de3ec81885fe08a92c7e85f49d32614137c7f27341ec",
+    "docs/np0.md": "39cb4cc02b79c9e9c41f9f3dc3ecc4057f53c0b79ef2aa96f21e42402fff0f6d",
+    "docs/NP1差异样本复核指南.md": "8a26f54bdf56e6801f67d471d5b878e7528e00aaa91fae6f150aaba434c659be",
+    "docs/NP1数值复核_20261023.md": "7dc8346fac2d73af292c792dfeb6552e66ac89029ae06337d6b19b425f0bfadb",
+    "docs/PR4绘图提交审查_20261028.md": "fda3161419bd6defbca01a571016b13f15b39a436691215056b22e55d7958503",
+    "docs/registry_fix_validation.md": "f6416a34b209cad6134ee7e19de3c14941c79772c374ae4038278a9247181de2",
+    "docs/交付与验收.md": "1780babe6d9d0e39b4dffe8f7a2c4e465d1bd17ec97dff1121bc6b809cb5a291",
+    "docs/后四项仓库使用指南.md": "f077a6f4e526d2d12ff824c56b873facfa9ea06621dd824a96b1355fc125a3a8",
+    "docs/基线接入验收_20261024.md": "d78eaed7b6e6b51545a539057ffb1a721c621db6e11ed1db9321f84020d96303",
+    "docs/正式实验与成员交付清单.md": "120cc760d1c79d2ff22c8a3063aec583f977bcc51f4c8988d2e85725fccb835c",
+    "docs/理论稿验收与表述补充_20261023.md": "60ce07d47058b51bb300acc4ff7cc57d0515eb5b08e11a56bb794e5566bbbc7d",
+    "docs/算法接口.md": "9bb43785a57a694283b4c3f953770ab922aaff1609449c31a0fe8b8925ad3324",
+    "docs/组长任务执行摘要.md": "51c4116386f5f59ccb2d107850d5fcfb459096982f75aecbb0c16b7a4a7a1deb",
+    "docs/组长前三项验收_20261021.md": "d03d95be50365bae92e4e898afd7c7698788ae9bd0855882d1f9f9c5c2fd820a",
+    "docs/论文实验口径.md": "19b9fa8add3b643c255bd8c459356f951ef40c3f55b2db34f538923653d3fd53",
+    "paper-workspace/INDEX.md": "e0ead2eb8a5453403ddb2d606e7c0038a5c9d11eca3f889e7e394fe8768d9b32",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/README.md": "42cae035000282a52887d74000571033d81a09d22ea79221bcff5d61e3893350",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/SUBMISSION.md": "ef33e7af0ae21221360746bca07fc6b61824e7001ad6cce0eda4451626ff8f1f",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/VALIDATION.md": "3670c336c530596ecc2ea75cae3cd630491a7b6fbf4bdde1eeb9b117eb356395",
+    "paper-workspace/submission/artifact-repro-checklist.md": "517588baf2b41a73183b9576be6084b1ac3c487cfda2111a2dfb34f4ff366a18",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/docs/论文2_Fig3_Fig4修正版与拟合说明_20261027.md": "4233391fd85ad4e0a8514e05d1cbaf4a3e2f26e9b9adb584001a8d09d41f13ed",
+    "paper2_experiment_reproduction_delivery_corrected_v2_20261027/docs/论文2_IRLS与Fig4计时核查修正_20261027.md": "28e70bfc2d8db7b73efc1ee015127537738d54f1ddbce585f6a6bbe255cb8d23",
+    "reproduce.ps1": "7583a2a34d6ec39baa8a0f4d20f4e0c624f3bf5e775746ee4d2a3f6062636829",
+    "scripts/leader_validation.ps1": "f3c5e54ae8d329d1b9d0fb5247e5651a03c53d4b7ed4868c1763c29faabac465"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\zhang\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "numpy": "2.2.4",
+  "scipy": "1.15.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "started_utc": "2026-10-28T09:37:08Z",
+  "git_commit": "d6bc1dcd74f42e5b1832e4c79ebf3f3fa53280c8",
+  "git_status": "?? results/member5_review_smoke_a/\n?? results/member5_review_smoke_b/\n?? results/member5_review_smoke_compare.json",
+  "dataset_sha256": "a1a2ecb233fce1a42382d3e3d70be383c5cd4fdd6e761e407e3ad35d282a7bb0",
+  "dataset_file": "data\\member5_team_paper_20261028\\240b2747ea36b8d3.npz",
+  "thread_limits": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "complete": true,
+  "errors": 0,
+  "outputs": {
+    "estimates.npz": "34f40dfcc0dc96c87daf79e6ea73e58994d28ef84e00da1405fb4f3ff9d6758d",
+    "histories.npz": "a5cfc253ff9a112601a8159f4259f97ec63b05d53932db14f73d99770b989374",
+    "summary.csv": "2dc59a263bcc1f24ce9ccb51d693b1109bb62c9a4ed8b116f23bed993adf21a1",
+    "trials.csv": "ba41454193b88b4e9d68fcb69e54f73df17a42278e43a1f434ebc6ea482afa3b"
+  }
+}
