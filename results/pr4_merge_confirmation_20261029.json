@@ -1,0 +1,10 @@
+{
+  "number": 4,
+  "url": "https://github.com/ghhgghhgee/Bayesian/pull/4",
+  "head": "453bd6d4f7132d58ef91175ca2c0fb3b38ecfaf0",
+  "merged": true,
+  "merged_at": "2026-10-28T16:21:18Z",
+  "merge_commit_sha": "d923eecba7cbaab341cf2d9a51ed2ebf2ed7f54b",
+  "state": "closed",
+  "leader_decision": "No further member histories handoff or cross-run per-iteration comparison required; accept completed full numerical replay."
+}
